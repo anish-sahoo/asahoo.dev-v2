@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-05-10T05:35:24.309Z",
+  "photos": [
+    {
+      "id": "a152a662-ff92-4277-b6b0-17ba2cfb40ac",
+      "alt": "big-sur-car",
+      "caption": null,
+      "tags": [
+        "california",
+        "moody",
+        "forest"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAwQFBgcBAv/EAB8QAAIDAAMBAAMAAAAAAAAAAAECAAMEBREhMQYSE//EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEQMRAD8Ap2Fytw6l84nP/WlWMz2lv1sBmhfjWoPnAJ+RlY1HOaw3ikmkEyka6bVcmxT3NO1cjmqUrYwlR5nbiuDKgHcaIqK+SWwctZkqKoZEw1alvgmWzGnffe5ZnMVZyT6Z6sVk+iBLSQiV9n2PVdKvg9iatDJZ1IUW5Tanoke6lT0Y6bYGwhoqP//Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    }
+  ]
+}

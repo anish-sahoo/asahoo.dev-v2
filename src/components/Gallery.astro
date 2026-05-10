@@ -1,0 +1,162 @@
+---
+import { getGalleryPhotos, publicBase, variantUrl } from '@/lib/photos';
+import type { Photo } from '@/lib/photos';
+
+interface Props {
+  initial?: number;
+}
+
+const { initial = 30 } = Astro.props;
+const all = getGalleryPhotos();
+const photos = all.slice(0, initial);
+const totalCount = all.length;
+const hasMore = totalCount > photos.length;
+const nextUrl = hasMore ? '/api/photos/1.json' : '';
+
+function packIntoColumns(items: Photo[], n: number): Photo[][] {
+  const cols: Photo[][] = Array.from({ length: n }, () => []);
+  const heights = new Array(n).fill(0);
+  for (const photo of items) {
+    let target = 0;
+    for (let i = 1; i < n; i++) {
+      if (heights[i] < heights[target]) target = i;
+    }
+    cols[target].push(photo);
+    heights[target] += 1 / photo.aspectRatio;
+  }
+  return cols;
+}
+
+function buildSrcset(photo: Photo, ext: 'avif' | 'webp'): string {
+  return photo.variants[ext]
+    .map((w) => `${variantUrl(photo.id, w, ext)} ${w}w`)
+    .join(', ');
+}
+
+function fallbackSrc(photo: Photo): string {
+  // Smallest variant — only used by browsers that ignore <source srcset>.
+  const widths = photo.variants.webp;
+  return variantUrl(photo.id, widths[0], 'webp');
+}
+
+function originalUrl(photo: Photo): string {
+  return `${publicBase()}/originals/${photo.id}.${photo.originalExt}`;
+}
+
+function fullUrl(photo: Photo): string {
+  // Lightbox preview before the full original loads. Prefer ~1600px (sharp on
+  // most laptop screens, ~200-400KB transfer), fall back to largest available.
+  const widths = photo.variants.webp;
+  const w = widths.includes(1600) ? 1600 : widths[widths.length - 1];
+  return variantUrl(photo.id, w, 'webp');
+}
+
+const cols3 = packIntoColumns(photos, 3);
+const cols2 = packIntoColumns(photos, 2);
+
+const sizes3 = '(max-width: 640px) 50vw, 33vw';
+const sizes2 = '50vw';
+---
+
+<div class="gallery gallery-3col" data-cols="3">
+  {cols3.map((col, idx) => (
+    <div class="gallery-col" data-col-idx={idx}>
+      {col.map((photo) => (
+        <picture
+          class="gallery-photo"
+          data-photo-id={photo.id}
+          data-photo-original={originalUrl(photo)}
+          data-photo-full={fullUrl(photo)}
+          data-photo-alt={photo.alt}
+          data-photo-ratio={photo.aspectRatio}
+        >
+          <source type="image/avif" srcset={buildSrcset(photo, 'avif')} sizes={sizes3} />
+          <source type="image/webp" srcset={buildSrcset(photo, 'webp')} sizes={sizes3} />
+          <img
+            src={fallbackSrc(photo)}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            loading="lazy"
+            decoding="async"
+            style={`background-image: url('${photo.lqip}'); background-size: cover;`}
+          />
+        </picture>
+      ))}
+    </div>
+  ))}
+</div>
+
+<div class="gallery gallery-2col" data-cols="2">
+  {cols2.map((col, idx) => (
+    <div class="gallery-col" data-col-idx={idx}>
+      {col.map((photo) => (
+        <picture
+          class="gallery-photo"
+          data-photo-id={photo.id}
+          data-photo-original={originalUrl(photo)}
+          data-photo-full={fullUrl(photo)}
+          data-photo-alt={photo.alt}
+          data-photo-ratio={photo.aspectRatio}
+        >
+          <source type="image/avif" srcset={buildSrcset(photo, 'avif')} sizes={sizes2} />
+          <source type="image/webp" srcset={buildSrcset(photo, 'webp')} sizes={sizes2} />
+          <img
+            src={fallbackSrc(photo)}
+            alt={photo.alt}
+            width={photo.width}
+            height={photo.height}
+            loading="lazy"
+            decoding="async"
+            style={`background-image: url('${photo.lqip}'); background-size: cover;`}
+          />
+        </picture>
+      ))}
+    </div>
+  ))}
+</div>
+
+<div id="gallery-sentinel" data-next={nextUrl} aria-hidden="true"></div>
+
+<style is:global>
+  .gallery {
+    /* Break out of the 680px main-content column. Centered, capped at 1800px
+       on ultra-wide so columns don't get absurd. Slight inline padding so
+       photos don't kiss the viewport edge. */
+    --gallery-gap: 6px;
+    width: min(100vw, 1800px);
+    margin-left: calc(50% - min(50vw, 900px));
+    margin-right: calc(50% - min(50vw, 900px));
+    margin-top: 1.5rem;
+    padding-inline: 0.5rem;
+    gap: var(--gallery-gap);
+  }
+  .gallery-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gallery-gap);
+    min-width: 0;
+  }
+  .gallery-photo {
+    display: block;
+    width: 100%;
+    cursor: zoom-in;
+    background: var(--color-bg-secondary);
+  }
+  .gallery-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .gallery-3col { display: flex; }
+  .gallery-2col { display: none; }
+  @media (max-width: 640px) {
+    .gallery-3col { display: none; }
+    .gallery-2col { display: flex; }
+  }
+  #gallery-sentinel {
+    height: 1px;
+    width: 100%;
+  }
+</style>

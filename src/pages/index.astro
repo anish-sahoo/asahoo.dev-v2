@@ -1,17 +1,214 @@
 ---
+import Layout from '@/components/Layout.astro';
+import SectionLabel from '@/components/SectionLabel.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '@/lib/format';
+import { visibleCurrently } from '@/data/now';
+import { personSchema } from '@/lib/jsonld';
 
+const description =
+  'backend/aiml engineer in boston. distributed systems by day, photography at night.';
+
+const notes = (await getCollection('notes', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 4);
+
+const personLd = JSON.stringify(personSchema());
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout description={description}>
+  <Fragment slot="head">
+    <title>anish sahoo</title>
+    <link rel="canonical" href="https://asahoo.dev/" />
+    <meta property="og:url" content="https://asahoo.dev/" />
+    <meta property="og:image" content="https://asahoo.dev/og-default.png" />
+    <meta name="twitter:image" content="https://asahoo.dev/og-default.png" />
+    <meta property="og:title" content="anish sahoo" />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="anish sahoo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="anish sahoo" />
+    <meta name="twitter:description" content={description} />
+    <script type="application/ld+json" set:html={personLd} />
+  </Fragment>
+
+  <header class="home-header">
+    <h1>anish sahoo</h1>
+    <p class="tagline">backend/ai/ml engineer · boston, ma</p>
+  </header>
+
+  <section class="bio">
+    <p>
+      i build distributed systems and ai/ml platforms by day. on weekends i shoot fujifilm
+      and chase the dream frequency response.
+    </p>
+    <p>this site is intentionally plain. it loads in one round trip.</p>
+  </section>
+
+  <section class="block">
+    <h2 class="visually-hidden">notes</h2>
+    <SectionLabel>NOTES</SectionLabel>
+    <ul class="row-list">
+      {
+        notes.map((n) => (
+          <li class="row">
+            <a href={`/notes/${n.id}`} class="row-title">{n.data.title}</a>
+            <time datetime={n.data.date.toISOString()} class="row-date">
+              {formatDate(n.data.date)}
+            </time>
+          </li>
+        ))
+      }
+      <li class="row row-all">
+        <a href="/notes">all notes →</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <h2 class="visually-hidden">currently</h2>
+    <SectionLabel>CURRENTLY</SectionLabel>
+    <dl class="currently">
+      {
+        visibleCurrently().slice(0, 5).map((entry) => (
+          <div class="currently-row">
+            <dt>{entry.label}</dt>
+            <dd>{entry.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </section>
+
+  <section class="block">
+    <h2 class="visually-hidden">elsewhere</h2>
+    <SectionLabel>ELSEWHERE</SectionLabel>
+    <p class="elsewhere">
+      <a href="/photos">photos</a>
+      <span class="sep"> · </span>
+      <a href="/projects">projects</a>
+      <span class="sep"> · </span>
+      <a href="/resume.pdf" target="_blank" rel="noopener">resume</a>
+      <span class="sep"> · </span>
+      <a href="https://github.com/anish-sahoo" target="_blank" rel="noopener">github</a>
+      <button
+        type="button"
+        class="sep sep-toggle"
+        aria-label="toggle theme"
+        onclick="window.toggleTheme && window.toggleTheme()"
+      > · </button>
+      <a href="mailto:sahoo.an@northeastern.edu">email</a>
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .home-header {
+    margin-top: 3rem;
+  }
+  .home-header h1 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0 0 0.25rem 0;
+  }
+  .tagline {
+    color: var(--color-text-tertiary);
+    margin: 0;
+    font-size: 14px;
+  }
+  .bio {
+    margin-top: 2rem;
+    color: var(--color-text-secondary);
+  }
+  .bio p {
+    margin: 0 0 0.75rem 0;
+  }
+  .block {
+    margin-top: 2.5rem;
+  }
+  .row-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.15rem 0;
+  }
+  .row-title {
+    text-decoration: none;
+  }
+  .row-title:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .row-date {
+    color: var(--color-text-tertiary);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .row-all {
+    margin-top: 0.5rem;
+  }
+  .row-all a {
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+  }
+  .row-all a:hover {
+    text-decoration: underline;
+  }
+  .currently {
+    margin: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 1.25rem;
+    row-gap: 0.25rem;
+  }
+  .currently-row {
+    display: contents;
+  }
+  .currently dt {
+    color: var(--color-text-tertiary);
+  }
+  .currently dd {
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+  .elsewhere {
+    margin: 0;
+  }
+  .elsewhere a {
+    text-decoration: none;
+  }
+  .elsewhere a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .sep {
+    color: var(--color-text-tertiary);
+  }
+  .sep-toggle {
+    color: var(--color-text-tertiary);
+    font: inherit;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

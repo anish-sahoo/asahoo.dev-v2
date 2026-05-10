@@ -1,0 +1,248 @@
+---
+---
+
+<script>
+  type PhotoData = {
+    id: string;
+    alt: string;
+    width: number;
+    height: number;
+    aspectRatio: number;
+    lqip: string;
+    originalExt: string;
+    variants: { avif: number[]; webp: number[] };
+  };
+
+  const PUBLIC_BASE =
+    (document.documentElement.dataset.imgBase ?? 'https://img.asahoo.dev').replace(/\/$/, '');
+
+  const variantUrl = (id: string, w: number, ext: 'avif' | 'webp') =>
+    `${PUBLIC_BASE}/variants/${id}/${w}.${ext}`;
+  const originalUrl = (p: PhotoData) =>
+    `${PUBLIC_BASE}/originals/${p.id}.${p.originalExt}`;
+  const fullUrl = (p: PhotoData) => {
+    const widths = p.variants.webp;
+    const w = widths.includes(1600) ? 1600 : widths[widths.length - 1];
+    return variantUrl(p.id, w, 'webp');
+  };
+  const fallbackSrc = (p: PhotoData) => {
+    const widths = p.variants.webp;
+    return variantUrl(p.id, widths[0], 'webp');
+  };
+
+  function srcset(p: PhotoData, ext: 'avif' | 'webp'): string {
+    return p.variants[ext].map((w) => `${variantUrl(p.id, w, ext)} ${w}w`).join(', ');
+  }
+
+  function buildTile(p: PhotoData, sizes: string): HTMLElement {
+    const pic = document.createElement('picture');
+    pic.className = 'gallery-photo';
+    pic.dataset.photoId = p.id;
+    pic.dataset.photoOriginal = originalUrl(p);
+    pic.dataset.photoFull = fullUrl(p);
+    pic.dataset.photoAlt = p.alt;
+    pic.dataset.photoRatio = String(p.aspectRatio);
+
+    const sAvif = document.createElement('source');
+    sAvif.type = 'image/avif';
+    sAvif.srcset = srcset(p, 'avif');
+    sAvif.sizes = sizes;
+    pic.appendChild(sAvif);
+
+    const sWebp = document.createElement('source');
+    sWebp.type = 'image/webp';
+    sWebp.srcset = srcset(p, 'webp');
+    sWebp.sizes = sizes;
+    pic.appendChild(sWebp);
+
+    const img = document.createElement('img');
+    img.src = fallbackSrc(p);
+    img.alt = p.alt;
+    img.width = p.width;
+    img.height = p.height;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.style.backgroundImage = `url('${p.lqip}')`;
+    img.style.backgroundSize = 'cover';
+    pic.appendChild(img);
+
+    return pic;
+  }
+
+  // Track current heights per column for both layouts.
+  function initHeights(gallery: HTMLElement | null): number[] {
+    if (!gallery) return [];
+    const cols = gallery.querySelectorAll<HTMLElement>('.gallery-col');
+    const heights: number[] = [];
+    cols.forEach((col) => {
+      let h = 0;
+      col.querySelectorAll<HTMLElement>('.gallery-photo').forEach((tile) => {
+        const r = parseFloat(tile.dataset.photoRatio ?? '1');
+        if (r > 0) h += 1 / r;
+      });
+      heights.push(h);
+    });
+    return heights;
+  }
+
+  const g3 = document.querySelector<HTMLElement>('.gallery-3col');
+  const g2 = document.querySelector<HTMLElement>('.gallery-2col');
+  const heights3 = initHeights(g3);
+  const heights2 = initHeights(g2);
+
+  function appendToShortest(
+    gallery: HTMLElement | null,
+    heights: number[],
+    p: PhotoData,
+    sizes: string
+  ) {
+    if (!gallery || heights.length === 0) return;
+    let target = 0;
+    for (let i = 1; i < heights.length; i++) {
+      if (heights[i] < heights[target]) target = i;
+    }
+    const cols = gallery.querySelectorAll<HTMLElement>('.gallery-col');
+    const col = cols[target];
+    if (!col) return;
+    col.appendChild(buildTile(p, sizes));
+    heights[target] += 1 / p.aspectRatio;
+  }
+
+  // Infinite scroll
+  const sentinel = document.getElementById('gallery-sentinel');
+  let nextUrl: string | null = sentinel?.dataset.next || null;
+  let loading = false;
+
+  async function loadNext() {
+    if (!nextUrl || loading) return;
+    loading = true;
+    try {
+      const res = await fetch(nextUrl);
+      if (!res.ok) {
+        loading = false;
+        return;
+      }
+      const data = (await res.json()) as { photos: PhotoData[]; next: string | null };
+      for (const p of data.photos) {
+        appendToShortest(g3, heights3, p, '(max-width: 640px) 50vw, 33vw');
+        appendToShortest(g2, heights2, p, '50vw');
+      }
+      nextUrl = data.next;
+      if (!nextUrl && sentinel) sentinel.remove();
+    } catch {
+      // ignore
+    } finally {
+      loading = false;
+    }
+  }
+
+  if (sentinel && nextUrl && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) loadNext();
+      },
+      { rootMargin: '600px' }
+    );
+    io.observe(sentinel);
+  } else if (sentinel && !nextUrl) {
+    sentinel.remove();
+  }
+
+  // Lightbox
+  const lb = document.getElementById('lightbox');
+  const lbImg = lb?.querySelector<HTMLImageElement>('.lightbox-img');
+  let lbList: HTMLElement[] = [];
+  let lbIndex = -1;
+
+  function visibleTiles(): HTMLElement[] {
+    // Use whichever gallery is currently visible
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    const gallery = isMobile ? g2 : g3;
+    if (!gallery) return [];
+    // Walk DOM in document order across columns to give a stable ordering.
+    // Fallback: gather all tiles regardless of column.
+    return Array.from(gallery.querySelectorAll<HTMLElement>('.gallery-photo'));
+  }
+
+  function showAt(i: number) {
+    if (!lb || !lbImg) return;
+    if (i < 0 || i >= lbList.length) return;
+    lbIndex = i;
+    const tile = lbList[i];
+    const full = tile.dataset.photoFull ?? '';
+    const orig = tile.dataset.photoOriginal ?? '';
+    const alt = tile.dataset.photoAlt ?? '';
+    lbImg.classList.remove('loaded');
+    lbImg.alt = alt;
+    lbImg.src = full;
+    lbImg.onload = () => {
+      lbImg.classList.add('loaded');
+      // Swap to original after fade-in
+      if (orig && orig !== full) {
+        const hi = new Image();
+        hi.onload = () => {
+          if (lbImg.src !== orig) lbImg.src = orig;
+        };
+        hi.src = orig;
+      }
+    };
+  }
+
+  function openLightbox(tile: HTMLElement) {
+    if (!lb) return;
+    lbList = visibleTiles();
+    lbIndex = lbList.indexOf(tile);
+    if (lbIndex < 0) {
+      // search by id across both galleries
+      const id = tile.dataset.photoId;
+      lbIndex = lbList.findIndex((t) => t.dataset.photoId === id);
+      if (lbIndex < 0) lbIndex = 0;
+    }
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    showAt(lbIndex);
+  }
+
+  function closeLightbox() {
+    if (!lb || !lbImg) return;
+    lb.hidden = true;
+    lbImg.removeAttribute('src');
+    lbImg.classList.remove('loaded');
+    document.body.style.overflow = '';
+  }
+
+  function next() {
+    if (lbIndex + 1 < lbList.length) showAt(lbIndex + 1);
+  }
+  function prev() {
+    if (lbIndex - 1 >= 0) showAt(lbIndex - 1);
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element | null;
+    if (!target) return;
+    const tile = target.closest<HTMLElement>('.gallery-photo');
+    if (tile) {
+      e.preventDefault();
+      openLightbox(tile);
+      return;
+    }
+    if (!lb || lb.hidden) return;
+    if (target.closest('[data-lb-close]')) {
+      closeLightbox();
+    } else if (target.closest('[data-lb-next]')) {
+      next();
+    } else if (target.closest('[data-lb-prev]')) {
+      prev();
+    } else if (target === lb) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb || lb.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+  });
+</script>

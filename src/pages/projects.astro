@@ -1,0 +1,103 @@
+---
+import Layout from '@/components/Layout.astro';
+import BackLink from '@/components/BackLink.astro';
+import SEO from '@/components/SEO.astro';
+import { visibleProjects } from '@/data/projects';
+
+const items = visibleProjects();
+---
+
+<Layout description="projects by anish sahoo">
+  <SEO slot="head" title="projects" description="projects by anish sahoo" />
+
+  <BackLink />
+
+  <h1>projects</h1>
+
+  <ul class="projects-list">
+    {
+      items.map((p) => {
+        const href = p.link;
+        const titleAttr = p.description;
+        return (
+          <li class="row">
+            <span class="row-left">
+              {href ? (
+                <a class="row-title" href={href} target="_blank" rel="noopener" title={titleAttr}>
+                  {p.name}
+                </a>
+              ) : (
+                <span class="row-title row-title-plain" title={titleAttr}>{p.name}</span>
+              )}
+              {p.hackathon && (
+                <span class="row-hack">
+                  @ {p.hackathon.link ? (
+                    <a href={p.hackathon.link} target="_blank" rel="noopener">{p.hackathon.name}</a>
+                  ) : (
+                    p.hackathon.name
+                  )}
+                </span>
+              )}
+            </span>
+            {href && <span class="row-arrow" aria-hidden="true">↗</span>}
+          </li>
+        );
+      })
+    }
+  </ul>
+</Layout>
+
+<style>
+  h1 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 1.5rem 0 1.5rem 0;
+  }
+  .projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.2rem 0;
+  }
+  .row-left {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .row-title {
+    text-decoration: none;
+  }
+  .row-title:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .row-title-plain {
+    color: var(--color-text-tertiary);
+  }
+  .row-hack {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+  }
+  .row-hack a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .row-hack a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .row-arrow {
+    color: var(--color-text-tertiary);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+</style>

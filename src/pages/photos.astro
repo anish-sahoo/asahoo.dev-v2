@@ -1,0 +1,31 @@
+---
+import Layout from '@/components/Layout.astro';
+import BackLink from '@/components/BackLink.astro';
+import SEO from '@/components/SEO.astro';
+import Gallery from '@/components/Gallery.astro';
+import GalleryHydrator from '@/components/GalleryHydrator.astro';
+import Lightbox from '@/components/Lightbox.astro';
+---
+
+<Layout title="photos" description="photos by anish sahoo">
+  <SEO slot="head" title="photos" description="photos by anish sahoo" />
+  <BackLink />
+  <header class="page-header">
+    <h1>photos</h1>
+  </header>
+  <Gallery initial={30} />
+  <GalleryHydrator />
+  <Lightbox />
+</Layout>
+
+<style>
+  .page-header {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+  .page-header h1 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0;
+  }
+</style>

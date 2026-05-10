@@ -1,0 +1,46 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang ?? 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#fafaf9" />
+    {title && <title>{title}</title>}
+    {description && <meta name="description" content={description} />}
+    <script is:inline>
+      (function () {
+        try {
+          const stored = localStorage.getItem('theme');
+          const resolved =
+            stored ??
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.dataset.theme = resolved;
+          const mq = document.querySelector('meta[name="theme-color"]');
+          if (mq) mq.setAttribute('content', resolved === 'dark' ? '#1a1a1a' : '#fafaf9');
+        } catch (_) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      import { initTheme } from '@/lib/theme';
+      initTheme();
+    </script>
+  </body>
+</html>

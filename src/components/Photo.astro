@@ -1,0 +1,64 @@
+---
+import { getPhoto, variantUrl } from '@/lib/photos';
+
+interface Props {
+  id: string;
+  caption?: string;
+  loading?: 'lazy' | 'eager';
+  sizes?: string;
+}
+
+const { id, caption, loading = 'lazy', sizes = '(max-width: 680px) 100vw, 680px' } = Astro.props;
+const photo = getPhoto(id);
+
+const avifSrcset = photo.variants.avif
+  .map((w) => `${variantUrl(id, w, 'avif')} ${w}w`)
+  .join(', ');
+const webpSrcset = photo.variants.webp
+  .map((w) => `${variantUrl(id, w, 'webp')} ${w}w`)
+  .join(', ');
+
+const largestWebp = photo.variants.webp[photo.variants.webp.length - 1];
+const fallbackSrc = variantUrl(id, largestWebp, 'webp');
+
+const displayCaption = caption ?? photo.caption ?? null;
+---
+
+<figure class="photo">
+  <picture style={`aspect-ratio: ${photo.aspectRatio}`}>
+    <source type="image/avif" srcset={avifSrcset} sizes={sizes} />
+    <source type="image/webp" srcset={webpSrcset} sizes={sizes} />
+    <img
+      src={fallbackSrc}
+      alt={photo.alt}
+      width={photo.width}
+      height={photo.height}
+      loading={loading}
+      decoding="async"
+      style={`background-image: url('${photo.lqip}'); background-size: cover;`}
+    />
+  </picture>
+  {displayCaption && <figcaption>{displayCaption}</figcaption>}
+</figure>
+
+<style>
+  .photo {
+    margin: 2rem 0;
+  }
+  .photo picture {
+    display: block;
+    width: 100%;
+  }
+  .photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .photo figcaption {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--color-text-tertiary);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+</style>

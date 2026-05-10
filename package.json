@@ -9,9 +9,27 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "photos:upload": "bun scripts/photos-upload.ts",
+    "photos:build": "bun scripts/photos-build.ts",
+    "photos:build:force": "bun scripts/photos-build.ts --force",
+    "check": "astro check",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.3.1"
+    "@astrojs/cloudflare": "^13.5.0",
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/source-serif-4": "^5.2.9",
+    "astro": "^6.3.1",
+    "mermaid": "^11.14.0",
+    "playwright": "^1.59.1",
+    "rehype-mermaid": "^3.0.0",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@types/bun": "^1.3.13",
+    "typescript": "^6.0.3"
   }
 }

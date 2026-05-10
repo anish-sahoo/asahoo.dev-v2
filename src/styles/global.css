@@ -1,0 +1,196 @@
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '@fontsource/source-serif-4/400.css';
+@import '@fontsource/source-serif-4/500.css';
+@import '@fontsource/source-serif-4/400-italic.css';
+
+:root {
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --max-width: 680px;
+  --side-padding: 1.5rem;
+}
+
+:root[data-theme='light'] {
+  --color-bg: #fafaf9;
+  --color-bg-secondary: #f0efed;
+  --color-text-primary: #1a1a1a;
+  /* Warm sepia — picks up the warm cast in --color-bg without becoming an accent. */
+  --color-text-secondary: #4a443a;
+  /* Tertiary darkened from #8a8a85 → #6c6c66 to clear WCAG AA (4.5:1). */
+  --color-text-tertiary: #6c6c66;
+  --color-border: rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme='dark'] {
+  --color-bg: #1a1a1a;
+  --color-bg-secondary: #232321;
+  --color-text-primary: #e8e6e0;
+  /* Warm sepia — matches the light variant's tilt for the dark mode. */
+  --color-text-secondary: #c0b8a8;
+  /* Tertiary lightened from #6a6864 → #9a988e to clear WCAG AA (4.5:1). */
+  --color-text-tertiary: #9a988e;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --side-padding: 2.5rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  background: var(--color-bg);
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+::selection {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+* {
+  scrollbar-color: var(--color-text-tertiary) var(--color-bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+/* Section label */
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-text-tertiary);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  opacity: 1;
+}
+
+/* Shiki dual-theme: shiki emits both palettes as CSS variables on each token.
+   By default it uses the light palette; this rule flips to the dark palette
+   when [data-theme="dark"] is active. !important is required because Shiki
+   sets `color`/`background-color` inline. */
+[data-theme='dark'] .astro-code,
+[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* Mermaid text follows the active theme. Mermaid bakes one color set into
+   the SVG at build time and scopes its own rules under #mermaid-N (high
+   specificity), so we need !important to win. Targets both HTML-in-SVG
+   labels (color) and native SVG text (fill). */
+svg[id^='mermaid-'] .label,
+svg[id^='mermaid-'] .nodeLabel,
+svg[id^='mermaid-'] .edgeLabel,
+svg[id^='mermaid-'] .flowchartTitleText,
+svg[id^='mermaid-'] foreignObject * {
+  color: var(--color-text-primary) !important;
+  fill: var(--color-text-primary) !important;
+}
+
+/* Lazy image fade-in (applied by gallery in Wave 3) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 300ms ease-out both;
+}

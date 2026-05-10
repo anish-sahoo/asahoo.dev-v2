@@ -1,0 +1,65 @@
+---
+import Layout from '@/components/Layout.astro';
+import BackLink from '@/components/BackLink.astro';
+import SEO from '@/components/SEO.astro';
+import { visibleCurrently, lastUpdated } from '@/data/now';
+import { formatDate } from '@/lib/format';
+---
+
+<Layout description="what anish is doing now">
+  <SEO
+    slot="head"
+    title="now"
+    description="what anish is doing now"
+  />
+
+  <BackLink />
+
+  <h1>now</h1>
+  <p class="intro">
+    what i'm up to. last updated <time datetime={lastUpdated.toISOString()}>{formatDate(lastUpdated)}</time>.
+  </p>
+
+  {
+    visibleCurrently().map((entry) => (
+      <section class="now-section">
+        <h2>{entry.label}</h2>
+        <p class="value">{entry.value}</p>
+        {entry.detail && <p class="detail">{entry.detail}</p>}
+      </section>
+    ))
+  }
+</Layout>
+
+<style>
+  h1 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 20px;
+    margin: 1.5rem 0 0.5rem 0;
+  }
+  .intro {
+    color: var(--color-text-tertiary);
+    margin: 0 0 2rem 0;
+  }
+  .now-section {
+    margin-top: 1.75rem;
+  }
+  .now-section h2 {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--color-text-tertiary);
+    margin: 0 0 0.25rem 0;
+    text-transform: lowercase;
+  }
+  .value {
+    margin: 0;
+    color: var(--color-text-primary);
+  }
+  .detail {
+    margin: 0.4rem 0 0 0;
+    color: var(--color-text-secondary);
+    font-size: 13px;
+  }
+</style>
