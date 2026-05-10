@@ -32,6 +32,7 @@ const jsonLd = blogPostingSchema({
     title={note.data.title}
     description={note.data.description}
     ogType="article"
+    ogImage={`/og/${slug}.png`}
     publishedAt={note.data.date}
     updatedAt={note.data.updated}
     tags={note.data.tags}
@@ -42,7 +43,11 @@ const jsonLd = blogPostingSchema({
     slot="head"
     set:html={JSON.stringify(jsonLd)}
   />
-  <BackLink />
+  <nav class="note-nav">
+    <a class="back-link" href="/">← anish sahoo</a>
+    <span class="nav-sep"> / </span>
+    <a class="back-link" href="/notes">notes</a>
+  </nav>
   <header class="note-header">
     <h1>{note.data.title}</h1>
     <p class="note-date">
@@ -91,11 +96,24 @@ const jsonLd = blogPostingSchema({
   .note-body h6 {
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 17px;
     line-height: 1.4;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     margin-bottom: 0.5rem;
     color: var(--color-text-primary);
+  }
+  .note-body h1 { font-size: 22px; }
+  .note-body h2 { font-size: 20px; }
+  .note-body h3 { font-size: 17px; margin-top: 2rem; }
+  .note-body h4,
+  .note-body h5,
+  .note-body h6 { font-size: 15px; margin-top: 1.5rem; }
+  .note-nav {
+    margin-top: 0.75rem;
+  }
+  .nav-sep {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--color-text-tertiary);
   }
   .note-body p {
     margin: 0 0 1.25rem 0;

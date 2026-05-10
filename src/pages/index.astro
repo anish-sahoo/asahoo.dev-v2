@@ -37,7 +37,9 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
 
   <header class="home-header">
     <h1>Anish Sahoo</h1>
-    <p class="tagline">Backend/AI/ML Engineer · Boston, MA</p>
+    <p class="tagline">
+      Backend/AI/ML Engineer · Boston, MA · <a href="/resume.pdf" target="_blank" rel="noopener" class="resume-btn">Resume</a>
+    </p>
   </header>
 
   <section class="bio">
@@ -148,22 +150,21 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
         onclick="window.toggleTheme && window.toggleTheme()"
       > · </button>
       <a href="mailto:sahoo.an@northeastern.edu">email</a>
-      <span class="sep"> · </span>
-      <a href="/resume.pdf" target="_blank" rel="noopener" class="resume-btn">resume ↓</a>
     </p>
   </section>
 </Layout>
 
 <style>
   .home-header {
-    margin-top: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem;
   }
   .home-header h1 {
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 36px;
-    margin: 0 0 0.35rem 0;
-    letter-spacing: -0.01em;
+    font-size: 44px;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em;
   }
   .tagline {
     color: var(--color-text-secondary);
@@ -171,7 +172,7 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     font-size: 14px;
   }
   .bio {
-    margin-top: 2rem;
+    margin-top: 3rem;
     color: var(--color-text-secondary);
     font-family: var(--font-serif);
     font-size: 15px;
@@ -195,7 +196,7 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;
-    padding: 0.15rem 0;
+    padding: 0.4rem 0;
   }
   .row-title {
     text-decoration: none;
@@ -231,6 +232,7 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
   }
   .currently dt {
     color: var(--color-text-tertiary);
+    font-size: 13px;
   }
   .currently dd {
     margin: 0;
@@ -301,7 +303,7 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     text-underline-offset: 2px;
   }
   .elsewhere {
-    margin: 0 0 2.5rem 0;
+    margin: 0;
   }
   .elsewhere a {
     text-decoration: none;
@@ -311,18 +313,13 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     text-underline-offset: 2px;
   }
   .resume-btn {
-    display: inline-block;
-    padding: 0.1rem 0.45rem;
-    border: 1px solid var(--color-border);
-    border-radius: 3px;
-    font-size: 13px;
-    text-decoration: none !important;
-    vertical-align: middle;
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
   }
   .resume-btn:hover {
-    background: var(--color-bg-secondary);
-    opacity: 1 !important;
-    text-decoration: none !important;
+    opacity: 0.7;
   }
   .sep {
     color: var(--color-text-tertiary);
