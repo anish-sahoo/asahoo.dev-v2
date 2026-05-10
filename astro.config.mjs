@@ -10,6 +10,9 @@ import { ACTIVE_SHIKI, ACTIVE_MERMAID } from './themes.config.ts';
 export default defineConfig({
   site: 'https://asahoo.dev',
   adapter: cloudflare(),
+  redirects: {
+    '/sitemap.xml': '/sitemap-index.xml',
+  },
   integrations: [
     mdx(),
     sitemap({ filter: (page) => !page.includes('/api/') }),

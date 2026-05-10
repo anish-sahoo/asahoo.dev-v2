@@ -1,0 +1,25 @@
+# Anish Sahoo
+
+> Backend/AI/ML engineer based in Boston, MA. Building distributed systems and AI/ML platforms by day, shooting Fujifilm on weekends.
+
+Personal site at https://asahoo.dev. Intentionally minimal — loads in one round trip.
+
+## Pages
+
+- [Home](https://asahoo.dev/): Bio, recent notes, current activity, and links.
+- [Notes](https://asahoo.dev/notes/): Technical writing on distributed systems, AI/ML, and adjacent topics.
+- [Projects](https://asahoo.dev/projects/): Side projects and hackathon work.
+- [Photos](https://asahoo.dev/photos/): Street and travel photography shot on Fujifilm X-T4.
+- [Now](https://asahoo.dev/now/): What I'm currently working on, reading, and listening to.
+- [Resume](https://asahoo.dev/resume.pdf): PDF resume.
+
+## Notes
+
+- [The Arya Stealth, Six Months In](https://asahoo.dev/notes/arya-stealth/): Long-term impressions of the HiFiMAN Arya Stealth — what's worth the hype, what isn't, and where the HD 650 still wins.
+- [Working With Pub/Sub in Go](https://asahoo.dev/notes/pub-sub-in-go/): Hard-won lessons about using Google Cloud Pub/Sub from Go without stuck messages or silent dead-letter pile-ups.
+- [Spring AI Is Better Than You'd Think](https://asahoo.dev/notes/spring-ai/): After a few months of building RAG pipelines in Spring AI, the framework's bet on making LLMs feel like just another bean is starting to pay off.
+
+## Contact
+
+- Email: sahoo.an@northeastern.edu
+- GitHub: https://github.com/anish-sahoo

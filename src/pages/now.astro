@@ -15,9 +15,9 @@ import { formatDate } from '@/lib/format';
 
   <BackLink />
 
-  <h1>now</h1>
+  <h1>Now</h1>
   <p class="intro">
-    what i'm up to. last updated <time datetime={lastUpdated.toISOString()}>{formatDate(lastUpdated)}</time>.
+    What I'm up to. Last updated <time datetime={lastUpdated.toISOString()}>{formatDate(lastUpdated)}</time>.
   </p>
 
   {
@@ -35,7 +35,7 @@ import { formatDate } from '@/lib/format';
   h1 {
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1.5rem 0 0.5rem 0;
   }
   .intro {

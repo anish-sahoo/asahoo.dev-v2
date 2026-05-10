@@ -19,7 +19,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft)).sort(
 
   <BackLink />
 
-  <h1>notes</h1>
+  <h1>Notes</h1>
 
   <ul class="notes-list">
     {
@@ -39,7 +39,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft)).sort(
   h1 {
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1.5rem 0 1.5rem 0;
   }
   .notes-list {

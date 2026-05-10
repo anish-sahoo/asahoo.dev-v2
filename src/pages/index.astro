@@ -34,16 +34,16 @@ const personLd = JSON.stringify(personSchema());
   </Fragment>
 
   <header class="home-header">
-    <h1>anish sahoo</h1>
-    <p class="tagline">backend/ai/ml engineer · boston, ma</p>
+    <h1>Anish Sahoo</h1>
+    <p class="tagline">Backend/AI/ML Engineer · Boston, MA</p>
   </header>
 
   <section class="bio">
     <p>
-      i build distributed systems and ai/ml platforms by day. on weekends i shoot fujifilm
+      I build distributed systems and AI/ML platforms by day. On weekends I shoot Fujifilm
       and chase the dream frequency response.
     </p>
-    <p>this site is intentionally plain. it loads in one round trip.</p>
+    <p>This site is intentionally plain. It loads in one round trip.</p>
   </section>
 
   <section class="block">
@@ -110,23 +110,29 @@ const personLd = JSON.stringify(personSchema());
   .home-header h1 {
     font-family: var(--font-mono);
     font-weight: 500;
-    font-size: 20px;
-    margin: 0 0 0.25rem 0;
+    font-size: 32px;
+    margin: 0 0 0.35rem 0;
+    letter-spacing: -0.01em;
   }
   .tagline {
-    color: var(--color-text-tertiary);
+    color: var(--color-text-secondary);
     margin: 0;
     font-size: 14px;
   }
   .bio {
     margin-top: 2rem;
     color: var(--color-text-secondary);
+    font-family: var(--font-serif);
+    font-size: 15px;
+    line-height: 1.65;
   }
   .bio p {
     margin: 0 0 0.75rem 0;
   }
   .block {
     margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
   }
   .row-list {
     list-style: none;
