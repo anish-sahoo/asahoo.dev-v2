@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-10T17:05:40.724Z",
+  "generatedAt": "2026-05-10T17:43:01.155Z",
   "photos": [
     {
       "id": "a152a662-ff92-4277-b6b0-17ba2cfb40ac",
@@ -46,6 +46,347 @@
       "height": 4160,
       "aspectRatio": 1.5,
       "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAbEAEBAQEAAwEAAAAAAAAAAAABAAIRAxIhMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOFMrP0YNNZpgjWEp5bvU+0PjdflKM+zF7ERVu3nJ50h8iIP/9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "72cf3941-7995-4914-acc4-278db1f659c3",
+      "alt": "nyc-skyline-taxi",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFBgH/xAAgEAACAQMEAwAAAAAAAAAAAAABAgADBBEFEiExFCIj/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABoRAAMAAwEAAAAAAAAAAAAAAAABAgMRITH/2gAMAwEAAhEDEQA/AM+dNKJnuIpbE3QBHGZZpXigbWOYq1UeRuUSCs1LDp9GzbAIAs7Q05mfriFrXZm9hLNu5VQwTiSTp1peBtTK2YNarZ7jlrUYuMwhLWuCS2VbNvuARmaShUAULtGIQi4fAZT/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "84b3b048-f566-4490-9d71-c656389dadfa",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAQGBQID/8QAHhAAAgICAwEBAAAAAAAAAAAAAQIAAwQFERIhE1H/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQACESH/2gAMAwEAAhEDEQA/AJWnAssPAUzxux2pYq44lVRfTjkuwB5iW0ux7yHCgTmLbSR0ydSzETYxtC2axut8WJ6+zHT8lBTtqq8YoCBB17JnpQleTax9YmaKKLqx2hCOoJe5Pk46mc33uqDgwhIpv//Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "bfcebd0d-68b7-4791-b965-c9612248c816",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQABAQEAAwAAAAAAAAAAAAAAAAMCAQQG/8QAHBAAAwACAwEAAAAAAAAAAAAAAAECAxEEEiEx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/EABoRAQEAAgMAAAAAAAAAAAAAAAEAAhESISL/2gAMAwEAAhEDEQA/APD9DlY2b7TrezUZZS9Dytqi40PiKXfZ+IKU16BYhSxQqtJs72XixOJNfQCWa7KmIaa3Eww8TbWyWeJ6NpaAEH1MnV//2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "1ddaa08e-d8da-4c28-a134-9e1d432aacd6",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 5547,
+      "height": 4160,
+      "aspectRatio": 1.3334,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAECAwQFBv/EAB4QAAEFAAMBAQAAAAAAAAAAAAIAAQMEEQUSISIU/8QAFwEBAQEBAAAAAAAAAAAAAAAABAADBf/EABwRAAICAgMAAAAAAAAAAAAAAAACAQMRMQRBUf/aAAwDAQACEQMRAD8A0opYrIdgdlDNGzLjqfKzVhxifFr1eW/QP2WOkRbEbDNRnRbmFlRkzUti3jbvipPeAtWy3LPYZ+M3hj9fPU4CIW+XxCEE6QpzSOOOShY3QhWCyf/Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "9048fb63-73e2-401e-8b9d-7eeb7ed33cf5",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAQFBgECA//EAB8QAAEFAQACAwAAAAAAAAAAAAEAAgMEESEGMQUTQf/EABYBAQEBAAAAAAAAAAAAAAAAAAECA//EABgRAQEBAQEAAAAAAAAAAAAAAAABMRFB/9oADAMBAAIRAxEAPwCI+OlDTHv4rXN5BFUqtGgnFR68nBntYsCWQkudxFnRLxO2PIzZcWs5qQszfYNPVERsLZNBT75Q2L11GYrScBwArS1Yf63iEK6z9cqr3GUaVYH12PgaSEIRD6//2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "0f843c24-38f8-4860-ba1d-74be7a8f0a80",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "national park"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAEFBAL/xAAeEAACAgICAwAAAAAAAAAAAAAAAQIDBDEFEhEhQf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAA//EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/ANVcXFexsjw5CxrY5ci47YMlZW9NjeTFIjy5DsjPZmN6YpHhkTX06suk0AA0EbpeBysYAQf/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "0d841734-4ecb-4d46-b3da-0e5ef35549db",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "national park"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMEBQYC/8QAHxAAAQQCAwEBAAAAAAAAAAAAAQACAxESIQQFMSIy/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQMC/8QAGREBAQEAAwAAAAAAAAAAAAAAAQACESEx/9oADAMBAAIRAxEAPwCZxsuMclYN5jJRje1iz3UxP14iDtnNly2tOzXtAw5OrWyto3a4a6hbjoKlHd5+hMPZskjLbolDoCQ1zZhuztSY2NA8QhYqzrAH5CWW2/2kIU9yX//Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "0b9ef1b4-b73d-4ad3-8e6e-d0197f8e6af1",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "flight"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAwQAAgUB/8QAHhAAAgICAwEBAAAAAAAAAAAAAAECAwQREiFBMVH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGBEBAQADAAAAAAAAAAAAAAAAABEBEhP/2gAMAwEAAhEDEQA/AEHhvXUQEsGbl86NyWXT4kL25lfmjbpU8oxbsNx8EbaNGzfkRkZ90othtjJaRHkyfpSWQ/0T5sq5tkLpiWQ2ClY2Bcjq7Ag+bJyYPZNkmvyLqQLZHLQB/9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "e2fd6a1d-e44d-47b8-8124-348bc12f4b9f",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "utah"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUBAwIEBv/EAB8QAAEEAgMBAQAAAAAAAAAAAAEAAgMRBCESExQiQf/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAYEQEBAAMAAAAAAAAAAAAAAAAAAQIRMf/aAAwDAQACEQMRAD8A5/EmGHHoXapyX97uR0qi+ox+qt5e8aS2NGXocw0DpOMXjPi28JD1OB+k4xSWYhCGXDY9K4voC0wgia6tIQjQjb8cbhZUTNEcRDUIU9qaf//Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "bf9dcfac-225f-41b7-bc29-40efa5374f1a",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIEBQYD/8QAHRAAAgIDAQEBAAAAAAAAAAAAAQIAAwQFESESMf/EABYBAQEBAAAAAAAAAAAAAAAAAAMAAf/EABoRAQACAwEAAAAAAAAAAAAAAAABEhMhQRH/2gAMAwEAAhEDEQA/AIOrAstPssL8hKLFVj+zJa/YWYxPPYZefbe/0xIjX0DH7O25D1vUCGHolXsqlspZQRM3TschV+Q55Gsz8gD0zbwzHKJSAE7GdQw7CEPheuaeGPa5K8hCSf/Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "412d06ff-3767-4f9f-81e4-a688fd15af90",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "cityscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4546,
+      "height": 3409,
+      "aspectRatio": 1.3335,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAEDBAUGAv/EAB8QAAICAgIDAQAAAAAAAAAAAAABAgMREgQUITFBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABgRAAMBAQAAAAAAAAAAAAAAAAABEQMx/9oADAMBAAIRAxEAPwDEOGomgsp5ml8LDj01TS2Y0rwNhAdbxkVUycc4LrrUeFlE2ri8WcNW0hLNheiMjnyPQtlH0wAzRoOdiX6ddqa9SYAWskP/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "a3dd1e7d-5d68-4911-9818-ea9639d8d20a",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "cityscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4365,
+      "height": 3274,
+      "aspectRatio": 1.3332,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwQG/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIAETEDBBIhEyJB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAMC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAESEf/aAAwDAQACEQMRAD8A4vyq+Y2UBblh2y9kSR0uSYmNRXFZhx+wZVI6zLjtiBciNMqbqNM4rVQU0THqOq1xhCSW6TsTUZQ17YhCCv/Z",
       "variants": {
         "avif": [
           800,
