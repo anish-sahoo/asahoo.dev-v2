@@ -8,7 +8,7 @@ import { personSchema } from '@/lib/jsonld';
 import { getGalleryPhotos, variantUrl } from '@/lib/photos';
 
 const description =
-  'backend/aiml engineer in boston. distributed systems by day, photography at night.';
+  'Backend/AI/ML engineer in Boston. Distributed systems by day, photography at night.';
 
 const notes = (await getCollection('notes', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -20,17 +20,17 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
 
 <Layout description={description}>
   <Fragment slot="head">
-    <title>anish sahoo</title>
+    <title>Anish Sahoo</title>
     <link rel="canonical" href="https://asahoo.dev/" />
     <meta property="og:url" content="https://asahoo.dev/" />
     <meta property="og:image" content="https://asahoo.dev/og-default.png" />
     <meta name="twitter:image" content="https://asahoo.dev/og-default.png" />
-    <meta property="og:title" content="anish sahoo" />
+    <meta property="og:title" content="Anish Sahoo" />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="anish sahoo" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="anish sahoo" />
+    <meta name="twitter:title" content="Anish Sahoo" />
     <meta name="twitter:description" content={description} />
     <script type="application/ld+json" set:html={personLd} />
   </Fragment>
