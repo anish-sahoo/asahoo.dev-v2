@@ -113,6 +113,24 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
       document.querySelector('.carousel-next')?.addEventListener('click', () => {
         carousel?.scrollBy({ left: 300, behavior: 'smooth' });
       });
+
+      // Prevent Safari back/forward swipe gesture when scrolling inside the
+      // carousel. overscroll-behavior-x only works in Safari 16+; this covers
+      // older iOS where the property is silently ignored.
+      if (carousel) {
+        let touchStartX = 0;
+        carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        carousel.addEventListener('touchmove', (e) => {
+          const dx = e.touches[0].clientX - touchStartX;
+          const atStart = carousel.scrollLeft <= 0;
+          const atEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1;
+          if ((atStart && dx > 0) || (atEnd && dx < 0)) {
+            e.preventDefault();
+          }
+        }, { passive: false });
+      }
     </script>
   </section>
 
@@ -228,11 +246,11 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     gap: 0.4rem;
     height: 110px;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     scrollbar-width: none;
     flex: 1;
+    min-width: 0;
     overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
   }
   .photo-carousel::-webkit-scrollbar {
     display: none;
