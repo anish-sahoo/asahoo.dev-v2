@@ -5,6 +5,7 @@ import { getCollection } from 'astro:content';
 import { formatDate } from '@/lib/format';
 import { visibleCurrently } from '@/data/now';
 import { personSchema } from '@/lib/jsonld';
+import { getGalleryPhotos, variantUrl } from '@/lib/photos';
 
 const description =
   'backend/aiml engineer in boston. distributed systems by day, photography at night.';
@@ -14,6 +15,7 @@ const notes = (await getCollection('notes', ({ data }) => !data.draft))
   .slice(0, 4);
 
 const personLd = JSON.stringify(personSchema());
+const previewPhotos = getGalleryPhotos().slice(0, 8);
 ---
 
 <Layout description={description}>
@@ -82,14 +84,43 @@ const personLd = JSON.stringify(personSchema());
   </section>
 
   <section class="block">
+    <h2 class="visually-hidden">photos</h2>
+    <SectionLabel>PHOTOS</SectionLabel>
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-prev" aria-label="Previous photos">‹</button>
+      <div class="photo-carousel" id="photo-carousel">
+        {previewPhotos.map((p) => (
+          <a href="/photos" class="photo-thumb">
+            <img
+              src={variantUrl(p.id, 800, 'webp')}
+              alt={p.alt}
+              loading="lazy"
+              decoding="async"
+              style={`background-image: url('${p.lqip}'); background-size: cover; background-position: center;`}
+            />
+          </a>
+        ))}
+      </div>
+      <button class="carousel-btn carousel-next" aria-label="Next photos">›</button>
+    </div>
+    <p class="photo-all"><a href="/photos">all photos →</a></p>
+
+    <script>
+      const carousel = document.getElementById('photo-carousel');
+      document.querySelector('.carousel-prev')?.addEventListener('click', () => {
+        carousel?.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+      document.querySelector('.carousel-next')?.addEventListener('click', () => {
+        carousel?.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    </script>
+  </section>
+
+  <section class="block">
     <h2 class="visually-hidden">elsewhere</h2>
     <SectionLabel>ELSEWHERE</SectionLabel>
     <p class="elsewhere">
-      <a href="/photos">photos</a>
-      <span class="sep"> · </span>
       <a href="/projects">projects</a>
-      <span class="sep"> · </span>
-      <a href="/resume.pdf" target="_blank" rel="noopener">resume</a>
       <span class="sep"> · </span>
       <a href="https://github.com/anish-sahoo" target="_blank" rel="noopener">github</a>
       <button
@@ -99,6 +130,8 @@ const personLd = JSON.stringify(personSchema());
         onclick="window.toggleTheme && window.toggleTheme()"
       > · </button>
       <a href="mailto:sahoo.an@northeastern.edu">email</a>
+      <span class="sep"> · </span>
+      <a href="/resume.pdf" target="_blank" rel="noopener" class="resume-btn">resume ↓</a>
     </p>
   </section>
 </Layout>
@@ -185,8 +218,70 @@ const personLd = JSON.stringify(personSchema());
     margin: 0;
     color: var(--color-text-primary);
   }
+  .carousel-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .photo-carousel {
+    display: flex;
+    gap: 0.4rem;
+    height: 110px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    flex: 1;
+  }
+  .photo-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .photo-thumb {
+    flex: 0 0 auto;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+    text-decoration: none;
+    scroll-snap-align: start;
+    transition: opacity 0.2s;
+  }
+  .photo-thumb img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  .photo-carousel:hover .photo-thumb {
+    opacity: 0.6;
+  }
+  .photo-carousel:hover .photo-thumb:hover {
+    opacity: 1;
+  }
+  .carousel-btn {
+    flex: 0 0 auto;
+    font-size: 20px;
+    line-height: 1;
+    color: var(--color-text-tertiary);
+    padding: 0 0.1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s;
+  }
+  .carousel-btn:hover {
+    color: var(--color-text-primary);
+  }
+  .photo-all {
+    margin: 0.6rem 0 0 0;
+  }
+  .photo-all a {
+    color: var(--color-text-tertiary);
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .photo-all a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
   .elsewhere {
-    margin: 0;
+    margin: 0 0 2.5rem 0;
   }
   .elsewhere a {
     text-decoration: none;
@@ -194,6 +289,20 @@ const personLd = JSON.stringify(personSchema());
   .elsewhere a:hover {
     text-decoration: underline;
     text-underline-offset: 2px;
+  }
+  .resume-btn {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    font-size: 13px;
+    text-decoration: none !important;
+    vertical-align: middle;
+  }
+  .resume-btn:hover {
+    background: var(--color-bg-secondary);
+    opacity: 1 !important;
+    text-decoration: none !important;
   }
   .sep {
     color: var(--color-text-tertiary);
