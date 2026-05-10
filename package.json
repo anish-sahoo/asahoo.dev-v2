@@ -13,7 +13,8 @@
     "photos:build": "bun scripts/photos-build.ts",
     "photos:build:force": "bun scripts/photos-build.ts --force",
     "check": "astro check",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.5.0",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/bun": "^1.3.13",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.90.0"
   }
 }
