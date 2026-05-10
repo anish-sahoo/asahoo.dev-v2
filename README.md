@@ -33,7 +33,12 @@ bun run deploy
   ```
 - Refusing-to-overwrite: `photos:upload` won't replace an existing R2 key, so you can never silently lose a photo.
 - `--force`: `bun run photos:build:force` regenerates every variant even if R2 already has them. Use after changing variant sizes or quality settings in `scripts/photos-build.ts`.
-- Removing a photo: delete its entry from `photos.config.ts`, run `photos:build`. The script drops it from the manifest. Original + variants stay in R2 until you delete them manually in the dashboard.
+- Removing a photo:
+  ```bash
+  bun run photos:delete <id>            # confirms before doing anything
+  bun run photos:delete <id> --yes      # skip the confirm prompt
+  ```
+  Deletes the original + every variant from R2, removes the entry from `photos.config.ts`, drops it from `src/data/photos.json`. Warns if the id is referenced by an MDX note (which would silently truncate the build until you fix the reference).
 
 ## Adding notes
 

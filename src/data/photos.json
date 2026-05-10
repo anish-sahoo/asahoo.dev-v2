@@ -119,35 +119,6 @@
       "originalExt": "jpg"
     },
     {
-      "id": "bfcebd0d-68b7-4791-b965-c9612248c816",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "nyc",
-        "street photography"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6240,
-      "height": 4160,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQABAQEAAwAAAAAAAAAAAAAAAAMCAQQG/8QAHBAAAwACAwEAAAAAAAAAAAAAAAECAxEEEiEx/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/EABoRAQEAAgMAAAAAAAAAAAAAAAEAAhESISL/2gAMAwEAAhEDEQA/APD9DlY2b7TrezUZZS9Dytqi40PiKXfZ+IKU16BYhSxQqtJs72XixOJNfQCWa7KmIaa3Eww8TbWyWeJ6NpaAEH1MnV//2Q==",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
       "id": "1ddaa08e-d8da-4c28-a134-9e1d432aacd6",
       "alt": "",
       "caption": null,
@@ -162,35 +133,6 @@
       "height": 4160,
       "aspectRatio": 1.3334,
       "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAECAwQFBv/EAB4QAAEFAAMBAQAAAAAAAAAAAAIAAQMEEQUSISIU/8QAFwEBAQEBAAAAAAAAAAAAAAAABAADBf/EABwRAAICAgMAAAAAAAAAAAAAAAACAQMRMQRBUf/aAAwDAQACEQMRAD8A0opYrIdgdlDNGzLjqfKzVhxifFr1eW/QP2WOkRbEbDNRnRbmFlRkzUti3jbvipPeAtWy3LPYZ+M3hj9fPU4CIW+XxCEE6QpzSOOOShY3QhWCyf/Z",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "9048fb63-73e2-401e-8b9d-7eeb7ed33cf5",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "nyc",
-        "street photography"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6240,
-      "height": 4160,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAQFBgECA//EAB8QAAEFAQACAwAAAAAAAAAAAAEAAgMEESEGMQUTQf/EABYBAQEBAAAAAAAAAAAAAAAAAAECA//EABgRAQEBAQEAAAAAAAAAAAAAAAABMRFB/9oADAMBAAIRAxEAPwCI+OlDTHv4rXN5BFUqtGgnFR68nBntYsCWQkudxFnRLxO2PIzZcWs5qQszfYNPVERsLZNBT75Q2L11GYrScBwArS1Yf63iEK6z9cqr3GUaVYH12PgaSEIRD6//2Q==",
       "variants": {
         "avif": [
           800,

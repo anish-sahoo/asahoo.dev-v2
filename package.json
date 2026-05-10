@@ -11,6 +11,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "photos:upload": "bun scripts/photos-upload.ts",
+    "photos:delete": "bun scripts/photos-delete.ts",
     "photos:build": "bun scripts/photos-build.ts",
     "photos:build:force": "bun scripts/photos-build.ts --force",
     "check": "astro check",
