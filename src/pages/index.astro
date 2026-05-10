@@ -231,6 +231,8 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     flex: 1;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .photo-carousel::-webkit-scrollbar {
     display: none;

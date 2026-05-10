@@ -18,6 +18,8 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    touch-action: none;
+    overscroll-behavior: contain;
   }
   .lightbox[hidden] {
     display: none;
@@ -28,6 +30,7 @@
     object-fit: contain;
     opacity: 0;
     transition: opacity 200ms ease-out;
+    will-change: opacity;
   }
   .lightbox-img.loaded {
     opacity: 1;
@@ -42,6 +45,11 @@
     padding: 1rem;
     line-height: 1;
     font-family: var(--font-mono, monospace);
+    transition: opacity 0.15s;
+  }
+  .lightbox button:disabled {
+    opacity: 0.2;
+    cursor: default;
   }
   .lightbox-close {
     top: 0;

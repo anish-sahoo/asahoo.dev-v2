@@ -151,17 +151,31 @@
   // Lightbox
   const lb = document.getElementById('lightbox');
   const lbImg = lb?.querySelector<HTMLImageElement>('.lightbox-img');
+  const lbPrevBtn = lb?.querySelector<HTMLButtonElement>('[data-lb-prev]');
+  const lbNextBtn = lb?.querySelector<HTMLButtonElement>('[data-lb-next]');
   let lbList: HTMLElement[] = [];
   let lbIndex = -1;
+  let loadGen = 0;
 
   function visibleTiles(): HTMLElement[] {
-    // Use whichever gallery is currently visible
     const isMobile = window.matchMedia('(max-width: 640px)').matches;
     const gallery = isMobile ? g2 : g3;
     if (!gallery) return [];
-    // Walk DOM in document order across columns to give a stable ordering.
-    // Fallback: gather all tiles regardless of column.
     return Array.from(gallery.querySelectorAll<HTMLElement>('.gallery-photo'));
+  }
+
+  function preloadAdjacent(i: number) {
+    [i - 1, i + 1].forEach((idx) => {
+      if (idx >= 0 && idx < lbList.length) {
+        const src = lbList[idx].dataset.photoFull;
+        if (src) { const img = new Image(); img.src = src; }
+      }
+    });
+  }
+
+  function updateButtons() {
+    if (lbPrevBtn) lbPrevBtn.disabled = lbIndex <= 0;
+    if (lbNextBtn) lbNextBtn.disabled = lbIndex >= lbList.length - 1;
   }
 
   function showAt(i: number) {
@@ -172,20 +186,28 @@
     const full = tile.dataset.photoFull ?? '';
     const orig = tile.dataset.photoOriginal ?? '';
     const alt = tile.dataset.photoAlt ?? '';
+
+    // Generation guard — prevents a slow high-res load from a previous image
+    // overwriting the current one when navigating quickly.
+    const gen = ++loadGen;
+
     lbImg.classList.remove('loaded');
     lbImg.alt = alt;
     lbImg.src = full;
     lbImg.onload = () => {
+      if (gen !== loadGen) return;
       lbImg.classList.add('loaded');
-      // Swap to original after fade-in
       if (orig && orig !== full) {
         const hi = new Image();
         hi.onload = () => {
-          if (lbImg.src !== orig) lbImg.src = orig;
+          if (gen === loadGen) lbImg.src = orig;
         };
         hi.src = orig;
       }
     };
+
+    updateButtons();
+    preloadAdjacent(i);
   }
 
   function openLightbox(tile: HTMLElement) {
@@ -193,7 +215,6 @@
     lbList = visibleTiles();
     lbIndex = lbList.indexOf(tile);
     if (lbIndex < 0) {
-      // search by id across both galleries
       const id = tile.dataset.photoId;
       lbIndex = lbList.findIndex((t) => t.dataset.photoId === id);
       if (lbIndex < 0) lbIndex = 0;
@@ -206,17 +227,29 @@
   function closeLightbox() {
     if (!lb || !lbImg) return;
     lb.hidden = true;
+    ++loadGen; // cancel any pending high-res load
     lbImg.removeAttribute('src');
     lbImg.classList.remove('loaded');
     document.body.style.overflow = '';
   }
 
-  function next() {
-    if (lbIndex + 1 < lbList.length) showAt(lbIndex + 1);
-  }
-  function prev() {
-    if (lbIndex - 1 >= 0) showAt(lbIndex - 1);
-  }
+  function next() { if (lbIndex + 1 < lbList.length) showAt(lbIndex + 1); }
+  function prev() { if (lbIndex - 1 >= 0) showAt(lbIndex - 1); }
+
+  // Touch swipe
+  let touchStartX = 0;
+  let touchStartY = 0;
+  lb?.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  lb?.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      dx < 0 ? next() : prev();
+    }
+  });
 
   document.addEventListener('click', (e) => {
     const target = e.target as Element | null;
