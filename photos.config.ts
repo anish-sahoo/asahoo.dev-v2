@@ -25,11 +25,11 @@ export const photos: PhotoEntry[] = [
   { id: '412d06ff-3767-4f9f-81e4-a688fd15af90', alt: '', tags: ['cityscape'] }, // DSCF0430-converted.JPG
   { id: 'a3dd1e7d-5d68-4911-9818-ea9639d8d20a', alt: '', tags: ['cityscape'] }, // DSCF1178-converted.JPG
   { id: 'fab8901e-e5d6-40f3-8614-4ee831fbc780', alt: 'boat-sunny-morning', tags: ['street photography', 'seattle'] }, // DSCF2114_edited.JPG
+  { id: 'fa6b6654-9a6f-400b-a536-01c28fb31433', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1627_edited.JPG
   { id: '3a862463-52e9-4c4a-ad5e-1847bc61e523', alt: 'pike-place-market-people', tags: ['street photography', 'seattle'] }, // DSCF2278_edited.JPG
   { id: '773f2ed5-5ab2-4f76-ac52-965cc04d5b89', alt: 'people-sitting-pike-place', tags: ['street photography', 'seattle'] }, // DSCF2265_edited.JPG
   { id: 'dfb9e901-1909-4700-8d73-14138105172f', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2271_edited.JPG
   { id: '43e8d1e9-498c-41ba-bb4e-402e61e6e2a8', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2248_edited.JPG
   { id: 'ce023276-0ac3-4921-ad22-708c0a16cb53', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2241_edited.JPG
-  { id: 'fa6b6654-9a6f-400b-a536-01c28fb31433', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1627_edited.JPG
   { id: '22ffcdca-62c0-4bb5-b351-fe0dea22e0df', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1641_edited.JPG
 ];
