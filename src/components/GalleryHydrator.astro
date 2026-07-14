@@ -8,6 +8,7 @@
     width: number;
     height: number;
     aspectRatio: number;
+    featured?: boolean;
     lqip: string;
     originalExt: string;
     variants: { avif: number[]; webp: number[] };
@@ -34,14 +35,27 @@
     return p.variants[ext].map((w) => `${variantUrl(p.id, w, ext)} ${w}w`).join(', ');
   }
 
-  function buildTile(p: PhotoData, sizes: string): HTMLElement {
+  // Deterministic hash — must match the server-side version in Gallery.astro.
+  function photoHash(id: string): number {
+    let h = 5381;
+    for (let i = 0; i < id.length; i++) {
+      h = ((h << 5) + h + id.charCodeAt(i)) >>> 0;
+    }
+    return h;
+  }
+  const isWideId = (id: string) => photoHash(id) % 4 === 0;
+
+  function buildTile(p: PhotoData): HTMLElement {
+    const wide = isWideId(p.id) || !!p.featured;
     const pic = document.createElement('picture');
-    pic.className = 'gallery-photo';
+    pic.className = 'gallery-photo' + (wide ? ' gallery-photo--wide' : '');
     pic.dataset.photoId = p.id;
     pic.dataset.photoOriginal = originalUrl(p);
     pic.dataset.photoFull = fullUrl(p);
     pic.dataset.photoAlt = p.alt;
     pic.dataset.photoRatio = String(p.aspectRatio);
+
+    const sizes = wide ? '100vw' : '34vw';
 
     const sAvif = document.createElement('source');
     sAvif.type = 'image/avif';
@@ -69,46 +83,120 @@
     return pic;
   }
 
-  // Track current heights per column for both layouts.
-  function initHeights(gallery: HTMLElement | null): number[] {
-    if (!gallery) return [];
-    const cols = gallery.querySelectorAll<HTMLElement>('.gallery-col');
-    const heights: number[] = [];
-    cols.forEach((col) => {
-      let h = 0;
-      col.querySelectorAll<HTMLElement>('.gallery-photo').forEach((tile) => {
-        const r = parseFloat(tile.dataset.photoRatio ?? '1');
-        if (r > 0) h += 1 / r;
-      });
-      heights.push(h);
-    });
-    return heights;
-  }
+  // ---- Justified rows layout -------------------------------------------------
+  // Photos flow into full-width rows. Within a row every photo shares one
+  // height; widths are proportional to aspect ratio (flex-grow), so each row
+  // fills the available width exactly — no holes. "Wide" photos get their own
+  // row (alone, or paired with one normal photo) so they render larger.
 
-  const g3 = document.querySelector<HTMLElement>('.gallery-3col');
-  const g2 = document.querySelector<HTMLElement>('.gallery-2col');
-  const heights3 = initHeights(g3);
-  const heights2 = initHeights(g2);
+  const gallery = document.querySelector<HTMLElement>('.gallery');
+  // Canonical ordered list of tiles; rows are rebuilt from this on every layout.
+  let tiles: HTMLElement[] = gallery
+    ? Array.from(gallery.querySelectorAll<HTMLElement>('.gallery-photo'))
+    : [];
 
-  function appendToShortest(
-    gallery: HTMLElement | null,
-    heights: number[],
-    p: PhotoData,
-    sizes: string
-  ) {
-    if (!gallery || heights.length === 0) return;
-    let target = 0;
-    for (let i = 1; i < heights.length; i++) {
-      if (heights[i] < heights[target]) target = i;
+  // Prefer the actually-loaded image's dimensions — the stored metadata can be
+  // stale (e.g. EXIF-rotated photos recorded with pre-rotation dimensions), so
+  // the loaded image is the source of truth once available.
+  const ratioOf = (t: HTMLElement) => {
+    const img = t.querySelector('img');
+    if (img && img.complete && img.naturalWidth > 0) {
+      return img.naturalWidth / img.naturalHeight;
     }
-    const cols = gallery.querySelectorAll<HTMLElement>('.gallery-col');
-    const col = cols[target];
-    if (!col) return;
-    col.appendChild(buildTile(p, sizes));
-    heights[target] += 1 / p.aspectRatio;
+    const r = parseFloat(t.dataset.photoRatio ?? '1.5');
+    return r > 0 ? r : 1.5;
+  };
+  const isWideTile = (t: HTMLElement) => t.classList.contains('gallery-photo--wide');
+
+  function layout() {
+    if (!gallery || tiles.length === 0) return;
+
+    const cs = getComputedStyle(gallery);
+    const padL = parseFloat(cs.paddingLeft) || 0;
+    const padR = parseFloat(cs.paddingRight) || 0;
+    const gap = parseFloat(cs.getPropertyValue('--gallery-gap')) || 6;
+    const available = gallery.clientWidth - padL - padR;
+    if (available <= 0) return;
+
+    const isMobile = window.matchMedia('(max-width: 640px)').matches;
+    // Knob controlling photos-per-row: smaller divisor → fewer, larger photos.
+    const target = available / (isMobile ? 2.4 : 4.2);
+
+    // A "feature" photo gets its own row (optionally paired with one normal
+    // photo) so it renders larger: hash-picked wide photos, and any portrait
+    // (aspect ratio < 1), which would otherwise be squeezed short in a normal
+    // row. Pairing a portrait with one landscape gives it a tall, prominent slot.
+    const isFeature = (t: HTMLElement) => isWideTile(t) || ratioOf(t) < 1;
+
+    // Group tiles into rows.
+    const rows: HTMLElement[][] = [];
+    let i = 0;
+    while (i < tiles.length) {
+      if (isFeature(tiles[i])) {
+        const row = [tiles[i]];
+        i++;
+        if (i < tiles.length && !isFeature(tiles[i])) {
+          row.push(tiles[i]);
+          i++;
+        }
+        rows.push(row);
+      } else {
+        // Greedy fill until the row height drops to the target.
+        const row: HTMLElement[] = [];
+        let sumAR = 0;
+        while (i < tiles.length && !isFeature(tiles[i])) {
+          row.push(tiles[i]);
+          sumAR += ratioOf(tiles[i]);
+          i++;
+          const h = (available - gap * (row.length - 1)) / sumAR;
+          if (h <= target) break;
+        }
+        rows.push(row);
+      }
+    }
+
+    // Render rows. Reuses existing tile elements (no image reloads). No height
+    // is set: each photo's flex-grow is its aspect ratio, so widths are
+    // proportional to aspect ratio and the natural heights (width / ratio) come
+    // out equal across the row — no cropping, portraits included.
+    const frag = document.createDocumentFragment();
+    for (const row of rows) {
+      const rowEl = document.createElement('div');
+      rowEl.className = 'gallery-row';
+      for (const t of row) {
+        t.style.flex = `${ratioOf(t)} 1 0`;
+        rowEl.appendChild(t);
+      }
+      frag.appendChild(rowEl);
+    }
+    gallery.replaceChildren(frag);
+    gallery.classList.add('is-justified');
   }
 
-  // Infinite scroll
+  // Debounced relayout, shared by resize and image-load corrections.
+  let layoutTimer: number | undefined;
+  function scheduleLayout() {
+    window.clearTimeout(layoutTimer);
+    layoutTimer = window.setTimeout(layout, 100);
+  }
+
+  // Relayout as images finish loading, since their true dimensions (which may
+  // differ from the stored metadata) only become known then.
+  function watchLoads(ts: HTMLElement[]) {
+    for (const t of ts) {
+      const img = t.querySelector('img');
+      if (img && !img.complete) {
+        img.addEventListener('load', scheduleLayout, { once: true });
+      }
+    }
+  }
+
+  // Initial layout + relayout on resize and as images load.
+  layout();
+  watchLoads(tiles);
+  window.addEventListener('resize', scheduleLayout);
+
+  // ---- Infinite scroll -------------------------------------------------------
   const sentinel = document.getElementById('gallery-sentinel');
   let nextUrl: string | null = sentinel?.dataset.next || null;
   let loading = false;
@@ -123,10 +211,14 @@
         return;
       }
       const data = (await res.json()) as { photos: PhotoData[]; next: string | null };
+      const added: HTMLElement[] = [];
       for (const p of data.photos) {
-        appendToShortest(g3, heights3, p, '(max-width: 640px) 50vw, 33vw');
-        appendToShortest(g2, heights2, p, '50vw');
+        const tile = buildTile(p);
+        tiles.push(tile);
+        added.push(tile);
       }
+      layout();
+      watchLoads(added);
       nextUrl = data.next;
       if (!nextUrl && sentinel) sentinel.remove();
     } catch {
@@ -148,7 +240,7 @@
     sentinel.remove();
   }
 
-  // Lightbox
+  // ---- Lightbox --------------------------------------------------------------
   const lb = document.getElementById('lightbox');
   const lbImg = lb?.querySelector<HTMLImageElement>('.lightbox-img');
   const lbPrevBtn = lb?.querySelector<HTMLButtonElement>('[data-lb-prev]');
@@ -158,10 +250,7 @@
   let loadGen = 0;
 
   function visibleTiles(): HTMLElement[] {
-    const isMobile = window.matchMedia('(max-width: 640px)').matches;
-    const gallery = isMobile ? g2 : g3;
-    if (!gallery) return [];
-    return Array.from(gallery.querySelectorAll<HTMLElement>('.gallery-photo'));
+    return gallery ? Array.from(gallery.querySelectorAll<HTMLElement>('.gallery-photo')) : [];
   }
 
   function preloadAdjacent(i: number) {

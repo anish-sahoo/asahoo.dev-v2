@@ -13,7 +13,6 @@ export type PhotoEntry = {
 // To reorder the gallery, reorder this array.
 export const photos: PhotoEntry[] = [
   { id: 'a152a662-ff92-4277-b6b0-17ba2cfb40ac', alt: 'big-sur-car', tags: ['california', 'moody', 'forest'] }, // DSCF0431-best.JPG
-  { id: '84b3b048-f566-4490-9d71-c656389dadfa', alt: '', tags: ['nyc', 'street photography'] }, // DSCF0237.JPG
   { id: '1ddaa08e-d8da-4c28-a134-9e1d432aacd6', alt: '', tags: ['nyc', 'street photography'] }, // DSCF0131-converted.JPG
   { id: 'defb3930-f4fc-4078-9f96-721a64061108', alt: 'nyc-skyline-night', tags: ['nyc', 'cityscape'] }, // DSCF4349.JPG
   { id: '0f843c24-38f8-4860-ba1d-74be7a8f0a80', alt: '', tags: ['national park'] }, // DSCF2687.JPG
@@ -28,6 +27,7 @@ export const photos: PhotoEntry[] = [
   { id: 'fa6b6654-9a6f-400b-a536-01c28fb31433', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1627_edited.JPG
   { id: '3a862463-52e9-4c4a-ad5e-1847bc61e523', alt: 'pike-place-market-people', tags: ['street photography', 'seattle'] }, // DSCF2278_edited.JPG
   { id: '773f2ed5-5ab2-4f76-ac52-965cc04d5b89', alt: 'people-sitting-pike-place', tags: ['street photography', 'seattle'] }, // DSCF2265_edited.JPG
+  { id: '84b3b048-f566-4490-9d71-c656389dadfa', alt: '', tags: ['nyc', 'street photography'] }, // DSCF0237.JPG
   { id: 'dfb9e901-1909-4700-8d73-14138105172f', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2271_edited.JPG
   { id: '43e8d1e9-498c-41ba-bb4e-402e61e6e2a8', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2248_edited.JPG
   { id: 'ce023276-0ac3-4921-ad22-708c0a16cb53', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2241_edited.JPG
