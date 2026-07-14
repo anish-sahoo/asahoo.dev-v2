@@ -32,4 +32,5 @@ export const photos: PhotoEntry[] = [
   { id: '43e8d1e9-498c-41ba-bb4e-402e61e6e2a8', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2248_edited.JPG
   { id: 'ce023276-0ac3-4921-ad22-708c0a16cb53', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2241_edited.JPG
   { id: '22ffcdca-62c0-4bb5-b351-fe0dea22e0df', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1641_edited.JPG
+  { id: 'fdf95dc5-6007-4510-805c-c5ef0fb03556', alt: '', tags: ['austin', 'street photography', 'fireworks'] }, // DSC00738_edited.JPG
 ];
