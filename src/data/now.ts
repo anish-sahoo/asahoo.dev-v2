@@ -6,7 +6,7 @@ export type CurrentlyEntry = {
                        // without deleting the entry (preserves drafts/stubs).
 };
 
-export const lastUpdated = new Date('2026-05-10');
+export const lastUpdated = new Date('2026-07-14');
 
 export function visibleCurrently(): CurrentlyEntry[] {
   return currently.filter((e) => !e.hidden);
@@ -15,8 +15,8 @@ export function visibleCurrently(): CurrentlyEntry[] {
 export const currently: CurrentlyEntry[] = [
   {
     label: 'working at',
-    value: 'MasterControl',
-    detail: 'short description of what i do day-to-day there.',
+    value: 'Cloudflare, Inc.',
+    detail: 'I work on their AI Platform, contributing to Workers AI and replicate/cog.',
   },
   {
     label: 'reading',
@@ -31,7 +31,7 @@ export const currently: CurrentlyEntry[] = [
   },
   {
     label: 'shooting',
-    value: 'fuji X-T4, 23mm f/2, 33mm f/1.4',
+    value: 'sony a7v, 24-50 f/2.8',
     detail: 'walking around cities on weekends. trying to be less precious about the shutter.',
   },
   {
