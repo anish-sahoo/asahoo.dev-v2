@@ -8,7 +8,7 @@ import { personSchema } from '@/lib/jsonld';
 import { getGalleryPhotos, variantUrl } from '@/lib/photos';
 
 const description =
-  'Backend/AI/ML engineer in Boston. Distributed systems by day, photography at night.';
+  'Backend/AI/ML engineer in Boston. AI Infrastructure by day, photography at night.';
 
 const notes = (await getCollection('notes', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -44,7 +44,7 @@ const previewPhotos = getGalleryPhotos().slice(0, 8);
 
   <section class="bio">
     <p>
-      I build distributed systems and AI/ML platforms by day. On weekends I shoot Fujifilm
+      I build AI infrastructure at Cloudflare Workers AI. On weekends I shoot Sony
       and chase the dream frequency response.
     </p>
     <p>This site is intentionally plain. It loads in one round trip.</p>

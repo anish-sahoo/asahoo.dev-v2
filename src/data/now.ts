@@ -36,7 +36,7 @@ export const currently: CurrentlyEntry[] = [
   },
   {
     label: 'building',
-    value: "an anime recommendation system",
-    detail: 'a crazy overengineered recommendation system to help me find new anime to watch.',
+    value: "leap, a macOS-native fast window switcher",
+    detail: 'a fast window switcher that is lightweight and snappy',
   },
 ];

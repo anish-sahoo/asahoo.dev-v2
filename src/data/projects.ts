@@ -15,6 +15,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'leap',
+    description: 'fast macOS native window switcher',
+    link: 'https://github.com/anish-sahoo/leap'
+  },
+  {
+    name: 'cog',
+    description: 'packaging ml models done better',
+    link: 'https://github.com/replicate/cog'
+  },
+  {
+    name: 'toggo',
+    description: 'Get your trip plans out of the group chat and into real life',
+    link: 'https://github.com/generatenu/toggo'
+  },
+  {
     name: 'image-storage-api',
     description:
       'Small-scale file hosting server (not quite an FTP server) for hosting site assets.',
