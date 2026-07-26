@@ -139,5 +139,5 @@ export const MERMAID_PRESETS = {
 // active selection — edit these two lines to switch themes
 // ============================================================================
 
-export const ACTIVE_SHIKI: ShikiPreset = SHIKI_PRESETS.tokyoNight;
+export const ACTIVE_SHIKI: ShikiPreset = SHIKI_PRESETS.vitesse;
 export const ACTIVE_MERMAID: MermaidPreset = MERMAID_PRESETS.outline;

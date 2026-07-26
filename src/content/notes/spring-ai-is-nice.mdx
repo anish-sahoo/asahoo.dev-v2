@@ -1,0 +1,336 @@
+---
+title: Spring AI is better than you'd think
+date: 2026-06-12
+description: A very welcome addition to the Spring ecosystem
+tags:
+  - cs
+  - java
+  - programming
+---
+
+*I used Spring AI at one of my previous internships. This is an extra large blog post where I discuss everything I've observed while using Spring AI in production at a large company.*
+
+It's amazing how much Spring AI adds to the Spring ecosystem for building AI applications. Gone are the days where you need a separate Python microservice and an extra network call to use 'AI' functionality.
+
+# Spring AI
+
+The [Spring AI API](https://docs.spring.io/spring-ai/reference/api/index.html) supports many kinds of models - Chat, Embedding, Vision, Audio, Moderation, etc. It supports streaming for any model capable of streaming. It has built-in plumbing for using most (if not all) major AI providers, with custom classes like[`AnthropicChat`](https://docs.spring.io/spring-ai/reference/api/chat/anthropic-chat.html)for example. 
+
+Although all these models are very useful, LLMs are the current cool kids on the block. So we'll focus on LLM-related functionality for the most part. I also haven't had the chance to try out non-LLM models on Spring AI, so I'll keep things scoped to LLMs to some extent.
+
+
+## ChatClient
+
+ChatClient is the built-in API to make calls to OpenAI-compatible LLMs. It supports both streaming and synchronous calls, and can automatically parse SSE chunks into a proper POJO. This makes it really easy to focus on the problem-solving while abstracting away the LLM call implementation. 
+
+Spring autowires the ChatClient, but here's an illustrative example of what happens under the hood:
+
+```java
+// usually autowired, happens behind the scenes
+ChatClient chatClient = ChatClient.create(
+    new OpenAiChatModel(
+        OpenAiApi.builder()
+            .apiKey(System.getenv("OPENAI_API_KEY"))
+            .baseUrl(System.getenv("OPENAI_BASE_URL"))
+            .build()
+    )
+);
+
+// this is what we write
+String answer = chatClient.prompt()
+    .system("""
+        You are an expert technical writer.
+        Summarize articles in under 100 words.
+        """)
+    .user(article.content())
+    .call()
+    .content();
+```
+
+It has a really nice API that supports custom OpenAI-compatible endpoints, headers, API keys, and much more. You can create custom ChatClients with internal headers and URLs and security, or point it to your favorite AI provider. Here's an example of a decked out custom ChatClient:
+
+```java
+@Bean
+OpenAiApi openAiApi() {
+    return OpenAiApi.builder()
+        .baseUrl(System.getenv("BASE_URL"))
+        .headers(headers -> headers.add("X-Client-Id", "my-service"))
+        .build();
+}
+
+@PostMapping(
+    value = "/chat", 
+    produces = MediaType.TEXT_EVENT_STREAM_VALUE
+)
+public Flux<String> chat(String message, String model) {
+    return chatClient.prompt()
+        .user(message)
+        .options(OpenAiChatOptions.builder()
+            .model(model)
+            .build())
+        .stream()
+        .content();
+}
+```
+
+## Structured Output
+
+Structured output is one of those major DX improvements that cures a lot of headaches. It can directly convert LLM responses into POJOs/records without any prompt engineering. 
+
+Spring AI automatically generates and sends the provider-specific [structured output schema](https://developers.openai.com/api/docs/guides/structured-outputs) required by supported models, so your code can be AI provider agnostic. This is a small example of what's possible:
+
+Say we want to parse the LLM response to this record:
+```java
+public record TicketClassification(
+    Priority priority,
+    String team,
+    String reason
+) {}
+```
+
+Without structured output:
+```java
+String response = chatClient.prompt()
+    .system("""
+        Classify this IT support ticket.
+        
+        Return JSON with:
+        - priority (HIGH, MEDIUM, LOW)
+        - team
+        - reason
+
+        Do not create other fields not mentioned here. 
+        Stick to this schema. PLEASE PLEASE PLEASE
+        """)
+    .user(description)
+    .call()
+    .content(); // no guarantee LLM will listen to us
+
+ObjectMapper mapper = new ObjectMapper();
+TicketClassification result;
+
+try {
+    result = mapper.readValue(response, TicketClassification.class);
+} catch (JsonProcessingException e) {
+    throw new RuntimeException();
+}
+```
+
+With structured output:
+
+```java
+TicketClassification result = chatClient.prompt()
+    .system("Classify IT support tickets")
+    .user(ticketDescription)
+    .call()
+    .entity(TicketClassification.class); // guaranteed parseability
+```
+It is possible to stack `@JsonProperty` and other Jackson features on top of this API, as this is a first-class citizen of the Spring ecosystem.
+
+## Agents + MCP + Tool Calling
+
+These days, people rarely use plain LLMs. Most AI applications use *agents* with powerful tools and MCP servers at their disposal. It is possible to give these powers to our Spring AI-based LLM services using the Tool API.
+
+You can convert any method into a tool using the `@Tool` annotation:
+```java
+@Component
+class WeatherTools {
+    @Tool(description = "Get the weather forecast for a city")
+    String weather(String city) {
+        return weatherService.lookup(city);
+    }
+}
+```
+
+These tools can be passed along to any ChatClient request, enabling the LLM to dynamically use tools. Spring AI is wired so the LLM can decide whether to invoke one, many, or no tools. Spring AI executes these tools locally (or makes MCP calls), and passes the response back to the LLM.
+```java
+String response = chatClient.prompt()
+    .tools(new WeatherTools(), new GithubTools())
+    .user("Will I need an umbrella in Seattle?")
+    .call()
+    .content();
+```
+
+To use MCP tools just like any other local `@Tool` call, you must create a bean similar to this one:
+```java
+@Bean
+SyncMcpToolCallbackProvider githubMcpTools(McpSyncClient client) {
+    return new SyncMcpToolCallbackProvider(client);
+}
+
+// you can mix tools and mcp tools
+String answer = chatClient.prompt()
+    .tools(githubMcpTools, new WeatherTools())
+    .user("Summarize all open PRs. Then tell me the weather.")
+    .call()
+    .content();
+```
+
+If you annotate your tools with `@McpTool`, your application automatically becomes an MCP server (requires the `Spring AI MCP Server Starter`). Note that you still need the `@Tool` annotation to use your tools locally over ChatClient.
+
+## Advisors
+Spring AI has another very powerful API - the [Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html). This enables all sorts of powerful features that used to take a lot of custom implementation. Advisors can modify requests before they reach the model. There are separate streaming advisors that work a bit differently. You can make both custom synchronous and streaming advisors.
+
+As of writing, these are the built-in advisors:
+- `MessageChatMemoryAdvisor` - Built in chat-memory harness
+- `VectorStoreChatMemoryAdvisor` - Retrieves memory from a vector store and adds to system prompt. Modern Claude and OpenAI models do something similar when you converse with them online.
+- `QuestionAnswerAdvisor` - Implements basic RAG, questions and answers
+- `RetrievalAugmentationAdvisor` - A more advanced RAG implementation using `org.springframework.ai.rag` building blocks
+- `ReReadingAdvisor` - Adds RE2, which according to this 2023 [paper](https://arxiv.org/pdf/2309.06275) improves reasoning quality in LLMs
+- `ToolCallingAdvisor` - usually hidden away, this is what does the tool calling we mentioned above *(kinda cool that so much in Spring AI is modular and uses the Advisors API)*
+- `SafeGuardAdvisor` - basic harmful/inappropriate content filter *(didn't know this existed before writing)*
+
+This is how you use advisors:
+```java
+chatClient.prompt()
+    .advisors(new MessageChatMemoryAdvisor(chatMemory))
+    .user("What did I ask you earlier?")
+    .call()
+    .content();
+
+// notice how so much in Spring AI runs off ChatClient?
+```
+
+You can also build your own advisors to do custom things. In the past, I've made advisors that update the request body, do security things, and other fun stuff. Here's an example:
+```java
+public class AuditAdvisor implements CallAdvisor {
+    @Override
+    public ChatClientRequest before(ChatClientRequest request) {
+        auditService.record(request.prompt());
+        return request;
+    }
+
+    @Override
+    public ChatClientResponse after(ChatClientResponse response) {
+        metrics.increment("llm.calls");
+        return response;
+    }
+}
+
+chatClient.prompt()
+    .advisors(new AuditAdvisor())
+    .user(question)
+    .call();
+```
+
+One of the nice things about advisors is chaining support, you can add multiple advisors inside `.advisors()`, and also set order of operations for custom advisors. The Spring AI Advisors API docs has some [excellent examples](https://docs.spring.io/spring-ai/reference/api/advisors.html).
+
+
+## Model Evaluation
+Another sort of uninspiring but kinda cool API is the Model Evaluation API. There's two fun ways to use this:
+
+### LLM as a Judge for Response Quality
+
+Spring AI can use LLMs as a judge to evaluate response quality. This is useful in automated tests and comparing prompts before rolling out major changes. Although useful in automated testing, it feels a bit too bulky for production request paths. I'm curious to see how Java shops end up using this.
+
+```java
+RelevancyEvaluator evaluator = new RelevancyEvaluator(chatModel);
+
+EvaluationRequest request = new EvaluationRequest(
+        userQuery,
+        generatedAnswer,
+        expectedAnswer
+);
+
+EvaluationResponse result = evaluator.evaluate(request);
+
+if (!result.isPass()) {
+    log.warn("Answer failed evaluation");
+}
+```
+
+### Custom Evaluation:
+This is the fun stuff. This is how I envision most of the Evaluation API to get used.
+
+```java
+public class ValidQuestionEvaluator implements Evaluator {
+
+    @Override
+    public EvaluationResponse evaluate(EvaluationRequest request) {
+
+        String answer = chatClient.prompt()
+                .system("""
+                    Determine whether the user's message
+                    is a valid customer support question.
+
+                    Respond ONLY with YES or NO.
+                    """)
+                .user(request.getInput())
+                .call()
+                .content();
+
+        return new EvaluationResponse(
+                "YES".equalsIgnoreCase(answer)
+        );
+    }
+}
+```
+
+You can have evaluators that may or may not depend on LLMs (for example, structured output validation, prompt injection validation, valid JSON evaluation, etc.). I see big benefits in this standardized API, as we can use this to do things like:
+
+```java
+@Component
+class InjectionEvaluator implements Evaluator { ... }
+
+@Component
+class SafetyEvaluator implements Evaluator { ... }
+
+@Component
+class JsonEvaluator implements Evaluator { ... }
+
+@RequiredArgsConstructor
+@Component
+public class EvaluationPipeline {
+    private final List<Evaluator> evaluators;
+
+    public EvaluationResponse evaluate(EvaluationRequest request) {
+        for (Evaluator evaluator : evaluators) {
+            EvaluationResponse result = evaluator.evaluate(request);
+            if (!result.isPass()) {
+                return result;
+            }
+        }
+        return EvaluationResponse.success();
+    }
+}
+```
+This is a nice primitive to use when you're building complex applications using Spring AI. I hope they add some native chaining similar to the Advisors API. Right now, custom evaluators feel a bit redundant when we already have the advisors. 
+
+# What still needs work
+
+## Working with reasoning models
+Spring AI's support for OpenAI-compatible reasoning models is a bit iffy right now. It supports most of the response body, but doesn't have a direct method to grab reasoning token usage. I have to use `getNativeUsage()`, which returns the entire usage object returned by my model:
+
+```java
+ChatResponse response = chatClient.prompt()
+    .user(prompt)
+    .call()
+    .chatResponse();
+
+OpenAiApi.ChatCompletion nativeResponse =
+    response.getMetadata()
+        .getUsage()
+        .getNativeUsage();
+
+System.out.println(nativeResponse.usage().reasoningTokens());
+```
+
+There are some other small annoyances here and there when working with custom models. Over time, as the library matures, these will go away.
+
+## Spring MVC vs WebFlux
+
+This is a very interesting problem I faced, because I had to build something that requires both streaming and synchronous requests. Spring MVC supports streaming responses using `Flux<>`, but the support is limited. I detected this quite late into the design process, and was stuck with a mess involving both a RestClient and a WebClient. I've learned the hard way that you never want to mix WebFlux and Spring MVC. This causes far more problems than you can imagine. 
+
+If you want to use Spring AI with streaming, be careful with the limits of Spring MVC streaming. If you need more power than what Spring MVC provides, it is better to switch the entire application to WebFlux.
+
+## OpenAPI
+
+There is an [open bug](https://github.com/OpenAPITools/openapi-generator/issues/16883) where the OpenAPI generator cannot properly generate schema for streaming endpoints with `Flux<>` return types. This blocks the use of OpenAPI for streaming endpoints, even though streaming has almost become the standard way of interacting with LLMs these days.
+
+# When does it make sense to use Spring AI?
+
+If you're touching inference and PyTorch and bare metal, just stick to Python or something else. For everyone else that has a pre-existing Spring ecosystem, it's your moment to hop on Spring AI. 
+
+This is a very well-designed library, with a lot of potential for product development use. I highly recommend it to Java shops and Java developers trying to use AI without creating and maintaining Python services.
+
+Visit the [Spring AI docs](https://docs.spring.io/spring-ai/reference/index.html) and build your dream Java AI applications!
