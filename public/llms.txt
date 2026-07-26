@@ -1,23 +1,30 @@
 # Anish Sahoo
 
-> Backend/AI/ML engineer based in Boston, MA. Building distributed systems and AI/ML platforms by day, shooting Fujifilm on weekends.
+> Backend/AI/ML engineer based in Boston, MA. I build AI infrastructure at Cloudflare, contributing to Workers AI and replicate/cog. Outside work, I shoot Sony and listen to music.
 
-Personal site at https://asahoo.dev. Intentionally minimal, it loads in one round trip.
+Personal site: https://asahoo.dev. The site is intentionally minimal and loads in one round trip.
 
 ## Pages
 
-- [Home](https://asahoo.dev/): Bio, recent notes, current activity, and links.
-- [Notes](https://asahoo.dev/notes/): Technical writing on distributed systems, AI/ML, and adjacent topics.
-- [Projects](https://asahoo.dev/projects/): Side projects and hackathon work.
-- [Photos](https://asahoo.dev/photos/): Street and travel photography shot on Fujifilm X-T4.
-- [Now](https://asahoo.dev/now/): What I'm currently working on, reading, and listening to.
+- [Home](https://asahoo.dev/): Bio, recent notes, current activity, and a photo preview.
+- [Notes](https://asahoo.dev/notes/): Writing on software, AI/ML, and photography.
+- [Projects](https://asahoo.dev/projects/): Side projects, open-source work, and hackathon projects.
+- [Photos](https://asahoo.dev/photos/): Street and travel photography.
+- [Now](https://asahoo.dev/now/): Current work, gear, and side projects.
 - [Resume](https://asahoo.dev/resume.pdf): PDF resume.
 
 ## Notes
 
-- [The Arya Stealth, Six Months In](https://asahoo.dev/notes/arya-stealth/): Long-term impressions of the HiFiMAN Arya Stealth - what's worth the hype, what isn't, and where the HD 650 still wins.
-- [Working With Pub/Sub in Go](https://asahoo.dev/notes/pub-sub-in-go/): Hard-won lessons about using Google Cloud Pub/Sub from Go without stuck messages or silent dead-letter pile-ups.
-- [Spring AI Is Better Than You'd Think](https://asahoo.dev/notes/spring-ai/): After a few months of building RAG pipelines in Spring AI, the framework's bet on making LLMs feel like just another bean is starting to pay off.
+- [Goodbye, Fujifilm](https://asahoo.dev/notes/goodbye-fujifilm/): Why I switched camera systems.
+- [Spring AI is better than you'd think](https://asahoo.dev/notes/spring-ai-is-nice/): Thoughts on a welcome addition to the Spring ecosystem.
+
+## Selected Projects
+
+- [leap](https://github.com/anish-sahoo/leap): Fast, native macOS window switcher.
+- [cog](https://github.com/replicate/cog): Improved packaging for ML models.
+- [toggo](https://github.com/generatenu/toggo): Turn group-chat trip plans into real plans.
+- [image-storage-api](https://github.com/anish-sahoo/image-storage-api): Small-scale file hosting for site assets.
+- [ResumeTex](https://resumetex.asahoo.dev): Converts JSON resumes into LaTeX/PDF using Jake's Resume format.
 
 ## Contact
 
