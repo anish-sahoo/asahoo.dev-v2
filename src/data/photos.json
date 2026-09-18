@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T17:27:02.319Z",
+  "generatedAt": "2026-09-18T20:43:49.208Z",
   "photos": [
     {
       "id": "a152a662-ff92-4277-b6b0-17ba2cfb40ac",
@@ -587,6 +587,64 @@
       "height": 7008,
       "aspectRatio": 0.6667,
       "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAgMEAAEFBv/EAB0QAAIDAQEBAQEAAAAAAAAAAAECAAMRIQQxE0H/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERAiH/2gAMAwEAAhEDEQA/APCqNj08rOugSes4RO15LqxQQ2bKc40m1yHQocMWZX6mUsck2TdQsZUhdgB9j3V6eGD5bArb/Y+5ha2mLBqU6ZoKT8l9Pnrevp7Bbziruxio6U4STKq66/yLM3ZEGMxmOfZNW4oLleqYiy52PWghjkA/YaHj/9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "d9ddea01-965a-49d6-b129-3477d631398a",
+      "alt": "norway-reinebringen-peak",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 7008,
+      "height": 4672,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAECBQYDBAf/xAAiEAABAwMEAwEAAAAAAAAAAAABAAIDBBEhBQYSURMiMUH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACEf/aAAwDAQACEQMRAD8Awx7yk5C4wt07ucWAtbhUdobzHSk4pYzGGYVOEo1x07cRqn2IspoVhcMKi0moU9IywAv2peh1iF31wQSoJc+BTw9w/UISkjPEjiMpPPIw+pIQhHTYv//Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "55a31fc6-603d-4948-aab6-28a8b954d32e",
+      "alt": "norway-oslo-downtown",
+      "caption": null,
+      "tags": [
+        "norway",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4238,
+      "height": 5298,
+      "aspectRatio": 0.7999,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAAMEAQIGBf/EACMQAAEEAgAGAwAAAAAAAAAAAAEAAgMRBCEFEiIxQVEGEzL/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAETIRH/2gAMAwEAAhEDEQA/AOrmibu15eVFZ0FNL8jitLPHsdx6qVS2dF8vDBiuceyobhNA2o28exg6tLd/HsbwQq1qM44YyPOxtYLnO92mxDkNOFpzjHy3ShohLZD2tMie5n6T2PHgLWSj6SJUYWgrDo2kIQmC/o10qeTGlLtFCEw//9k=",
       "variants": {
         "avif": [
           800,

@@ -33,4 +33,6 @@ export const photos: PhotoEntry[] = [
   { id: 'ce023276-0ac3-4921-ad22-708c0a16cb53', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2241_edited.JPG
   { id: '22ffcdca-62c0-4bb5-b351-fe0dea22e0df', alt: '', tags: ['street photography', 'seattle'] }, // DSCF1641_edited.JPG
   { id: 'fdf95dc5-6007-4510-805c-c5ef0fb03556', alt: '', tags: ['austin', 'street photography', 'fireworks'] }, // DSC00738_edited.JPG
+  { id: 'd9ddea01-965a-49d6-b129-3477d631398a', alt: 'norway-reinebringen-peak', tags: ['norway', 'landscape']}, // DSC02355_edited.JPG
+  { id: '55a31fc6-603d-4948-aab6-28a8b954d32e', alt: 'norway-oslo-downtown', tags: ['norway', 'street photography'] }, // DSC01617_edited.JPG
 ];
