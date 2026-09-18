@@ -1,6 +1,6 @@
 # Anish Sahoo
 
-> Backend/AI/ML engineer based in Boston, MA. I build AI infrastructure at Cloudflare, contributing to Workers AI and replicate/cog. Outside work, I shoot Sony and listen to music.
+> Backend/AI/ML engineer based in Boston, MA. I recently built AI infrastructure at Cloudflare, contributing to Workers AI and replicate/cog. Outside work, I shoot Sony and listen to music.
 
 Personal site: https://asahoo.dev. The site is intentionally minimal and loads in one round trip.
 

@@ -17,6 +17,7 @@ export const currently: CurrentlyEntry[] = [
     label: 'working at',
     value: 'Cloudflare, Inc.',
     detail: 'I work on their AI Platform, contributing to Workers AI and replicate/cog.',
+    hidden: true,
   },
   {
     label: 'reading',
