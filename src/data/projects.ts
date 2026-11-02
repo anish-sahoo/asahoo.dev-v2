@@ -15,6 +15,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: 'Birdie & Claire',
+    description: 'Clothing recommendations that can be restyled season after season.',
+    link: 'https://github.com/generatenu/birdie-and-claire'
+  },
+  {
+    name: 'bill-splitter',
+    description: 'i wish i could split bills easier',
+    link: 'https://bills.asahoo.dev'
+  },
+  {
     name: 'leap',
     description: 'fast macOS native window switcher',
     link: 'https://github.com/anish-sahoo/leap'
