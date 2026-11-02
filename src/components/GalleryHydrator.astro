@@ -171,6 +171,21 @@
     }
     gallery.replaceChildren(frag);
     gallery.classList.add('is-justified');
+    syncSizes();
+  }
+
+  // The static `sizes` hints (100vw / 34vw) are guesses; once the justified
+  // layout has run, give the browser each tile's real rendered width so it
+  // picks a variant that's actually sharp enough for the slot.
+  function syncSizes() {
+    for (const t of tiles) {
+      const w = Math.ceil(t.getBoundingClientRect().width);
+      if (w <= 0) continue;
+      const sizes = `${w}px`;
+      for (const el of t.querySelectorAll<HTMLSourceElement | HTMLImageElement>('source, img')) {
+        if (el.sizes !== sizes) el.sizes = sizes;
+      }
+    }
   }
 
   // Debounced relayout, shared by resize and image-load corrections.

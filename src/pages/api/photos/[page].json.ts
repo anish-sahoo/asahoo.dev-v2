@@ -3,7 +3,9 @@ import { getGalleryPhotos } from '@/lib/photos';
 
 export const prerender = true;
 
-const PAGE_SIZE = 20;
+// Must match the `initial` count rendered by <Gallery> on /photos, since
+// infinite scroll starts at page 1.
+const PAGE_SIZE = 30;
 
 export async function getStaticPaths() {
   const photos = getGalleryPhotos();

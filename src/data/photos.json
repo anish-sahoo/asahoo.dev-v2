@@ -61,12 +61,12 @@
       "originalExt": "jpg"
     },
     {
-      "id": "defb3930-f4fc-4078-9f96-721a64061108",
-      "alt": "nyc-skyline-night",
+      "id": "84b3b048-f566-4490-9d71-c656389dadfa",
+      "alt": "",
       "caption": null,
       "tags": [
         "nyc",
-        "cityscape"
+        "street photography"
       ],
       "takenAt": null,
       "featured": false,
@@ -74,7 +74,7 @@
       "width": 6240,
       "height": 4160,
       "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAbEAEBAQEAAwEAAAAAAAAAAAABAAIRAxIhMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOFMrP0YNNZpgjWEp5bvU+0PjdflKM+zF7ERVu3nJ50h8iIP/9k=",
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAQGBQID/8QAHhAAAgICAwEBAAAAAAAAAAAAAQIAAwQFERIhE1H/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQACESH/2gAMAwEAAhEDEQA/AJWnAssPAUzxux2pYq44lVRfTjkuwB5iW0ux7yHCgTmLbSR0ydSzETYxtC2axut8WJ6+zHT8lBTtqq8YoCBB17JnpQleTax9YmaKKLqx2hCOoJe5Pk46mc33uqDgwhIpv//Z",
       "variants": {
         "avif": [
           800,
@@ -90,20 +90,20 @@
       "originalExt": "jpg"
     },
     {
-      "id": "72cf3941-7995-4914-acc4-278db1f659c3",
-      "alt": "nyc-skyline-taxi",
+      "id": "ce023276-0ac3-4921-ad22-708c0a16cb53",
+      "alt": "",
       "caption": null,
       "tags": [
-        "nyc",
-        "street photography"
+        "street photography",
+        "seattle"
       ],
       "takenAt": null,
       "featured": false,
       "gallery": true,
-      "width": 6240,
-      "height": 4160,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFBgH/xAAgEAACAQMEAwAAAAAAAAAAAAABAgADBBEFEiExFCIj/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABoRAAMAAwEAAAAAAAAAAAAAAAABAgMRITH/2gAMAwEAAhEDEQA/AM+dNKJnuIpbE3QBHGZZpXigbWOYq1UeRuUSCs1LDp9GzbAIAs7Q05mfriFrXZm9hLNu5VQwTiSTp1peBtTK2YNarZ7jlrUYuMwhLWuCS2VbNvuARmaShUAULtGIQi4fAZT/2Q==",
+      "width": 4160,
+      "height": 2773,
+      "aspectRatio": 1.5002,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUG/8QAIBAAAgMAAQQDAAAAAAAAAAAAAAECAwQRBRIUISJBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABcRAQEBAQAAAAAAAAAAAAAAAAABEUH/2gAMAwEAAhEDEQA/AOHj8nx+jTxSVff9CcJcNGzGcZYuG/YWss6rxdNWmIzp6J41DsbJ4pOqrmLJ7tFluZpv0EdczAZjN9qXIAIWnVY1mRXbfJ0NAAVf/9k=",
       "variants": {
         "avif": [
           800,
@@ -147,62 +147,6 @@
       "originalExt": "jpg"
     },
     {
-      "id": "e2fd6a1d-e44d-47b8-8124-348bc12f4b9f",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "utah"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6240,
-      "height": 4160,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUBAwIEBv/EAB8QAAEEAgMBAQAAAAAAAAAAAAEAAgMRBCESExQiQf/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAYEQEBAAMAAAAAAAAAAAAAAAAAAQIRMf/aAAwDAQACEQMRAD8A5/EmGHHoXapyX97uR0qi+ox+qt5e8aS2NGXocw0DpOMXjPi28JD1OB+k4xSWYhCGXDY9K4voC0wgia6tIQjQjb8cbhZUTNEcRDUIU9qaf//Z",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "412d06ff-3767-4f9f-81e4-a688fd15af90",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "cityscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 4546,
-      "height": 3409,
-      "aspectRatio": 1.3335,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAEDBAUGAv/EAB8QAAICAgIDAQAAAAAAAAAAAAABAgMREgQUITFBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABgRAAMBAQAAAAAAAAAAAAAAAAABEQMx/9oADAMBAAIRAxEAPwDEOGomgsp5ml8LDj01TS2Y0rwNhAdbxkVUycc4LrrUeFlE2ri8WcNW0hLNheiMjnyPQtlH0wAzRoOdiX6ddqa9SYAWskP/2Q==",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
       "id": "a3dd1e7d-5d68-4911-9818-ea9639d8d20a",
       "alt": "",
       "caption": null,
@@ -216,6 +160,35 @@
       "height": 3274,
       "aspectRatio": 1.3332,
       "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwQG/8QAHxAAAgIBBAMAAAAAAAAAAAAAAQIAETEDBBIhEyJB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAMC/8QAFxEBAQEBAAAAAAAAAAAAAAAAAAESEf/aAAwDAQACEQMRAD8A4vyq+Y2UBblh2y9kSR0uSYmNRXFZhx+wZVI6zLjtiBciNMqbqNM4rVQU0THqOq1xhCSW6TsTUZQ17YhCCv/Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "d9ddea01-965a-49d6-b129-3477d631398a",
+      "alt": "norway-reinebringen-peak",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 7008,
+      "height": 4672,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAECBQYDBAf/xAAiEAABAwMEAwEAAAAAAAAAAAABAAIDBBEhBQYSURMiMUH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACEf/aAAwDAQACEQMRAD8Awx7yk5C4wt07ucWAtbhUdobzHSk4pYzGGYVOEo1x07cRqn2IspoVhcMKi0moU9IywAv2peh1iF31wQSoJc+BTw9w/UISkjPEjiMpPPIw+pIQhHTYv//Z",
       "variants": {
         "avif": [
           800,
@@ -260,7 +233,181 @@
       "originalExt": "jpg"
     },
     {
-      "id": "fa6b6654-9a6f-400b-a536-01c28fb31433",
+      "id": "412d06ff-3767-4f9f-81e4-a688fd15af90",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "cityscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4546,
+      "height": 3409,
+      "aspectRatio": 1.3335,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGgAAAQUBAAAAAAAAAAAAAAAAAAEDBAUGAv/EAB8QAAICAgIDAQAAAAAAAAAAAAABAgMREgQUITFBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABgRAAMBAQAAAAAAAAAAAAAAAAABEQMx/9oADAMBAAIRAxEAPwDEOGomgsp5ml8LDj01TS2Y0rwNhAdbxkVUycc4LrrUeFlE2ri8WcNW0hLNheiMjnyPQtlH0wAzRoOdiX6ddqa9SYAWskP/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "fdf95dc5-6007-4510-805c-c5ef0fb03556",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "austin",
+        "street photography",
+        "fireworks"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4672,
+      "height": 7008,
+      "aspectRatio": 0.6667,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAgMEAAEFBv/EAB0QAAIDAQEBAQEAAAAAAAAAAAECAAMRIQQxE0H/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERAiH/2gAMAwEAAhEDEQA/APCqNj08rOugSes4RO15LqxQQ2bKc40m1yHQocMWZX6mUsck2TdQsZUhdgB9j3V6eGD5bArb/Y+5ha2mLBqU6ZoKT8l9Pnrevp7Bbziruxio6U4STKq66/yLM3ZEGMxmOfZNW4oLleqYiy52PWghjkA/YaHj/9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "e1d2bb4a-49ff-4bac-ba59-808617b63d86",
+      "alt": "norway-a-mountain-sun",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4096,
+      "height": 3072,
+      "aspectRatio": 1.3333,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGwAAAgIDAQAAAAAAAAAAAAAAAAYDBAECBQf/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBBEFIRIiMTNR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAkH/2gAMAwEAAhEDEQA/AF3C5L2AcxrwsmhqPsG9fs8/A76k9eRbWenMy0KYzZfJpXeV3L2FyNCJ5s4iXbabDsnuRmxwNBjqUGmyICZ2+O4uq9CzQhDbiHKpSzMVKbio+BM049bDsQhLgdP/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "72cf3941-7995-4914-acc4-278db1f659c3",
+      "alt": "nyc-skyline-taxi",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFBgH/xAAgEAACAQMEAwAAAAAAAAAAAAABAgADBBEFEiExFCIj/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABoRAAMAAwEAAAAAAAAAAAAAAAABAgMRITH/2gAMAwEAAhEDEQA/AM+dNKJnuIpbE3QBHGZZpXigbWOYq1UeRuUSCs1LDp9GzbAIAs7Q05mfriFrXZm9hLNu5VQwTiSTp1peBtTK2YNarZ7jlrUYuMwhLWuCS2VbNvuARmaShUAULtGIQi4fAZT/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "569cf0a5-9503-4ef6-8860-f776dd1792da",
+      "alt": "norway-ryten-wildflowers",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6224,
+      "height": 4672,
+      "aspectRatio": 1.3322,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAIDBgcBBAX/xAAhEAABBAICAgMAAAAAAAAAAAABAAIDBBESBSExkQYTMv/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAbEQACAwADAAAAAAAAAAAAAAAAAQIREhMxUf/aAAwDAQACEQMRAD8Ak8vLVogcyD2tJnyGu6fQOCr58lmU9ucVmKKYPDu8pG16MWu27CYt9hhMjl6pdruAoVXsTmDRzyEz9R3JMp9qfNFdhyc82Gxn8oNzPgdoQp5VWFsSbcg8nCQLLie3FCFlFAs//9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "55a31fc6-603d-4948-aab6-28a8b954d32e",
+      "alt": "norway-oslo-downtown",
+      "caption": null,
+      "tags": [
+        "norway",
+        "street photography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 4238,
+      "height": 5298,
+      "aspectRatio": 0.7999,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAAMEAQIGBf/EACMQAAEEAgAGAwAAAAAAAAAAAAEAAgMRBCEFEiIxQVEGEzL/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAETIRH/2gAMAwEAAhEDEQA/AOrmibu15eVFZ0FNL8jitLPHsdx6qVS2dF8vDBiuceyobhNA2o28exg6tLd/HsbwQq1qM44YyPOxtYLnO92mxDkNOFpzjHy3ShohLZD2tMie5n6T2PHgLWSj6SJUYWgrDo2kIQmC/o10qeTGlLtFCEw//9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "22ffcdca-62c0-4bb5-b351-fe0dea22e0df",
       "alt": "",
       "caption": null,
       "tags": [
@@ -270,10 +417,39 @@
       "takenAt": null,
       "featured": false,
       "gallery": true,
+      "width": 5516,
+      "height": 3677,
+      "aspectRatio": 1.5001,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMCBAUB/8QAHxAAAgEEAwEBAAAAAAAAAAAAAAECAwQRMQUSURNB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABkRAQEAAwEAAAAAAAAAAAAAAAABAxESIf/aAAwDAQACEQMRAD8AwI8j6h0eQSWjBjN5G/STQ6jpMlaNe8hU2hUbyNN6KfWpvBFv0vGeqjFIbF4/AAFHalxLrhJFacmwABX/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "dfcd3753-d3e3-49d6-8018-bacead4c4712",
+      "alt": "nyc-skyline-blue",
+      "caption": null,
+      "tags": [
+        "nyc",
+        "cityscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
       "width": 6240,
       "height": 4160,
       "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAMEAgUG/8QAHRAAAgICAwEAAAAAAAAAAAAAAAECAwQRBSExQf/EABcBAQEBAQAAAAAAAAAAAAAAAAMCAAH/xAAYEQEAAwEAAAAAAAAAAAAAAAAAARESIf/aAAwDAQACEQMRAD8A46utsphQ16hVVsYssWXX9Q+qDizsap+Ie6lBbkSw5CEH0LyOSVi0jbJmIhqYmaW2AAKPrqUvQsoigA4quP/Z",
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAEDBAIF/8QAHBAAAwEBAQADAAAAAAAAAAAAAAECERIDEyFB/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAEEBQP/xAAbEQACAgMBAAAAAAAAAAAAAAAAAQMRAhJRQf/aAAwDAQACEQMRAD8A8NHRNMaZqGO0UA50NHYqI6OaWmL5KwJutJnKyxQr1m+ngujI/Wv0F61oYy9FlDwho5r7I9AqOVlFGiqOeiTsXYbBqf/Z",
       "variants": {
         "avif": [
           800,
@@ -318,12 +494,42 @@
       "originalExt": "jpg"
     },
     {
-      "id": "84b3b048-f566-4490-9d71-c656389dadfa",
-      "alt": "",
+      "id": "b3d38982-973b-472e-bb42-bdf08b33082a",
+      "alt": "norway-aurora",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape",
+        "astrophotography"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6229,
+      "height": 4672,
+      "aspectRatio": 1.3333,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAIEAQMG/8QAHhAAAgMAAQUAAAAAAAAAAAAAAAECAxFRBBITMUH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAwEE/8QAGhEBAQADAQEAAAAAAAAAAAAAAQACERIxQf/aAAwDAQACEQMRAD8A4dRbHVTfw2wkuChWVwjrGJTycj5Sqh8GXSktZTLqK3EhtucpPPQ94hE6fZfJgOxsAIaunpl7mKAGwv/Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "defb3930-f4fc-4078-9f96-721a64061108",
+      "alt": "nyc-skyline-night",
       "caption": null,
       "tags": [
         "nyc",
-        "street photography"
+        "cityscape"
       ],
       "takenAt": null,
       "featured": false,
@@ -331,7 +537,93 @@
       "width": 6240,
       "height": 4160,
       "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAQGBQID/8QAHhAAAgICAwEBAAAAAAAAAAAAAQIAAwQFERIhE1H/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQACESH/2gAMAwEAAhEDEQA/AJWnAssPAUzxux2pYq44lVRfTjkuwB5iW0ux7yHCgTmLbSR0ydSzETYxtC2axut8WJ6+zHT8lBTtqq8YoCBB17JnpQleTax9YmaKKLqx2hCOoJe5Pk46mc33uqDgwhIpv//Z",
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwb/xAAbEAEBAQEAAwEAAAAAAAAAAAABAAIRAxIhMf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/AOFMrP0YNNZpgjWEp5bvU+0PjdflKM+zF7ERVu3nJ50h8iIP/9k=",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "f1f84c04-3367-4a49-8968-16d290310d88",
+      "alt": "norway-uttakliev-beach-sunset",
+      "caption": null,
+      "tags": [
+        "norway",
+        "landscape"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 5034,
+      "height": 3776,
+      "aspectRatio": 1.3332,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUDAf/EACAQAAIBAwQDAAAAAAAAAAAAAAABAgMFMgQVQlIREiH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAgMB/8QAGhEBAAMAAwAAAAAAAAAAAAAAAAECURESIf/aAAwDAQACEQMRAD8Ahw0XtyN4299kSYa6a5GiuVRPItPOmi1cVo219kaxtTayRH3Solkd3iqlmw903auJP0ACJOeQAYH/2Q==",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "fa6b6654-9a6f-400b-a536-01c28fb31433",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "street photography",
+        "seattle"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAMEAgUG/8QAHRAAAgICAwEAAAAAAAAAAAAAAAECAwQRBSExQf/EABcBAQEBAQAAAAAAAAAAAAAAAAMCAAH/xAAYEQEAAwEAAAAAAAAAAAAAAAAAARESIf/aAAwDAQACEQMRAD8A46utsphQ16hVVsYssWXX9Q+qDizsap+Ie6lBbkSw5CEH0LyOSVi0jbJmIhqYmaW2AAKPrqUvQsoigA4quP/Z",
+      "variants": {
+        "avif": [
+          800,
+          1600,
+          2400
+        ],
+        "webp": [
+          800,
+          1600,
+          2400
+        ]
+      },
+      "originalExt": "jpg"
+    },
+    {
+      "id": "e2fd6a1d-e44d-47b8-8124-348bc12f4b9f",
+      "alt": "",
+      "caption": null,
+      "tags": [
+        "utah"
+      ],
+      "takenAt": null,
+      "featured": false,
+      "gallery": true,
+      "width": 6240,
+      "height": 4160,
+      "aspectRatio": 1.5,
+      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGgAAAgIDAAAAAAAAAAAAAAAAAAUBAwIEBv/EAB8QAAEEAgMBAQAAAAAAAAAAAAEAAgMRBCESExQiQf/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAYEQEBAAMAAAAAAAAAAAAAAAAAAQIRMf/aAAwDAQACEQMRAD8A5/EmGHHoXapyX97uR0qi+ox+qt5e8aS2NGXocw0DpOMXjPi28JD1OB+k4xSWYhCGXDY9K4voC0wgia6tIQjQjb8cbhZUTNEcRDUIU9qaf//Z",
       "variants": {
         "avif": [
           800,
@@ -396,298 +688,6 @@
         ],
         "webp": [
           800
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "ce023276-0ac3-4921-ad22-708c0a16cb53",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "street photography",
-        "seattle"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 4160,
-      "height": 2773,
-      "aspectRatio": 1.5002,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAQCAwUG/8QAIBAAAgMAAQQDAAAAAAAAAAAAAAECAwQRBRIUISJBUf/EABYBAQEBAAAAAAAAAAAAAAAAAAIBA//EABcRAQEBAQAAAAAAAAAAAAAAAAABEUH/2gAMAwEAAhEDEQA/AOHj8nx+jTxSVff9CcJcNGzGcZYuG/YWss6rxdNWmIzp6J41DsbJ4pOqrmLJ7tFluZpv0EdczAZjN9qXIAIWnVY1mRXbfJ0NAAVf/9k=",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "22ffcdca-62c0-4bb5-b351-fe0dea22e0df",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "street photography",
-        "seattle"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 5516,
-      "height": 3677,
-      "aspectRatio": 1.5001,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMCBAUB/8QAHxAAAgEEAwEBAAAAAAAAAAAAAAECAwQRMQUSURNB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABkRAQEAAwEAAAAAAAAAAAAAAAABAxESIf/aAAwDAQACEQMRAD8AwI8j6h0eQSWjBjN5G/STQ6jpMlaNe8hU2hUbyNN6KfWpvBFv0vGeqjFIbF4/AAFHalxLrhJFacmwABX/2Q==",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "fdf95dc5-6007-4510-805c-c5ef0fb03556",
-      "alt": "",
-      "caption": null,
-      "tags": [
-        "austin",
-        "street photography",
-        "fireworks"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 4672,
-      "height": 7008,
-      "aspectRatio": 0.6667,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAgMEAAEFBv/EAB0QAAIDAQEBAQEAAAAAAAAAAAECAAMRIQQxE0H/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERAiH/2gAMAwEAAhEDEQA/APCqNj08rOugSes4RO15LqxQQ2bKc40m1yHQocMWZX6mUsck2TdQsZUhdgB9j3V6eGD5bArb/Y+5ha2mLBqU6ZoKT8l9Pnrevp7Bbziruxio6U4STKq66/yLM3ZEGMxmOfZNW4oLleqYiy52PWghjkA/YaHj/9k=",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "d9ddea01-965a-49d6-b129-3477d631398a",
-      "alt": "norway-reinebringen-peak",
-      "caption": null,
-      "tags": [
-        "norway",
-        "landscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 7008,
-      "height": 4672,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAVACADASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAECBQYDBAf/xAAiEAABAwMEAwEAAAAAAAAAAAABAAIDBBEhBQYSURMiMUH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQACEf/aAAwDAQACEQMRAD8Awx7yk5C4wt07ucWAtbhUdobzHSk4pYzGGYVOEo1x07cRqn2IspoVhcMKi0moU9IywAv2peh1iF31wQSoJc+BTw9w/UISkjPEjiMpPPIw+pIQhHTYv//Z",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "55a31fc6-603d-4948-aab6-28a8b954d32e",
-      "alt": "norway-oslo-downtown",
-      "caption": null,
-      "tags": [
-        "norway",
-        "street photography"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 4238,
-      "height": 5298,
-      "aspectRatio": 0.7999,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAoACADASIAAhEBAxEB/8QAGgAAAwADAQAAAAAAAAAAAAAAAAMEAQIGBf/EACMQAAEEAgAGAwAAAAAAAAAAAAEAAgMRBCEFEiIxQVEGEzL/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAETIRH/2gAMAwEAAhEDEQA/AOrmibu15eVFZ0FNL8jitLPHsdx6qVS2dF8vDBiuceyobhNA2o28exg6tLd/HsbwQq1qM44YyPOxtYLnO92mxDkNOFpzjHy3ShohLZD2tMie5n6T2PHgLWSj6SJUYWgrDo2kIQmC/o10qeTGlLtFCEw//9k=",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "f1f84c04-3367-4a49-8968-16d290310d88",
-      "alt": "norway-uttakliev-beach-sunset",
-      "caption": null,
-      "tags": [
-        "norway",
-        "landscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 5034,
-      "height": 3776,
-      "aspectRatio": 1.3332,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAUDAf/EACAQAAIBAwQDAAAAAAAAAAAAAAABAgMFMgQVQlIREiH/xAAXAQADAQAAAAAAAAAAAAAAAAAAAgMB/8QAGhEBAAMAAwAAAAAAAAAAAAAAAAECURESIf/aAAwDAQACEQMRAD8Ahw0XtyN4299kSYa6a5GiuVRPItPOmi1cVo219kaxtTayRH3Solkd3iqlmw903auJP0ACJOeQAYH/2Q==",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "569cf0a5-9503-4ef6-8860-f776dd1792da",
-      "alt": "norway-ryten-wildflowers",
-      "caption": null,
-      "tags": [
-        "norway",
-        "landscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6224,
-      "height": 4672,
-      "aspectRatio": 1.3322,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAIDBgcBBAX/xAAhEAABBAICAgMAAAAAAAAAAAABAAIDBBESBSExkQYTMv/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/xAAbEQACAwADAAAAAAAAAAAAAAAAAQIREhMxUf/aAAwDAQACEQMRAD8Ak8vLVogcyD2tJnyGu6fQOCr58lmU9ucVmKKYPDu8pG16MWu27CYt9hhMjl6pdruAoVXsTmDRzyEz9R3JMp9qfNFdhyc82Gxn8oNzPgdoQp5VWFsSbcg8nCQLLie3FCFlFAs//9k=",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "e1d2bb4a-49ff-4bac-ba59-808617b63d86",
-      "alt": "norway-a-mountain-sun",
-      "caption": null,
-      "tags": [
-        "norway",
-        "landscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 4096,
-      "height": 3072,
-      "aspectRatio": 1.3333,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGwAAAgIDAQAAAAAAAAAAAAAAAAYDBAECBQf/xAAgEAACAgICAgMAAAAAAAAAAAABAgADBBEFIRIiMTNR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERAkH/2gAMAwEAAhEDEQA/AF3C5L2AcxrwsmhqPsG9fs8/A76k9eRbWenMy0KYzZfJpXeV3L2FyNCJ5s4iXbabDsnuRmxwNBjqUGmyICZ2+O4uq9CzQhDbiHKpSzMVKbio+BM049bDsQhLgdP/2Q==",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "b3d38982-973b-472e-bb42-bdf08b33082a",
-      "alt": "norway-aurora",
-      "caption": null,
-      "tags": [
-        "norway",
-        "landscape",
-        "astrophotography"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6229,
-      "height": 4672,
-      "aspectRatio": 1.3333,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAYACADASIAAhEBAxEB/8QAGQAAAwADAAAAAAAAAAAAAAAAAAIEAQMG/8QAHhAAAgMAAQUAAAAAAAAAAAAAAAECAxFRBBITMUH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAwEE/8QAGhEBAQADAQEAAAAAAAAAAAAAAQACERIxQf/aAAwDAQACEQMRAD8A4dRbHVTfw2wkuChWVwjrGJTycj5Sqh8GXSktZTLqK3EhtucpPPQ94hE6fZfJgOxsAIaunpl7mKAGwv/Z",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
-        ]
-      },
-      "originalExt": "jpg"
-    },
-    {
-      "id": "dfcd3753-d3e3-49d6-8018-bacead4c4712",
-      "alt": "nyc-skyline-blue",
-      "caption": null,
-      "tags": [
-        "nyc",
-        "cityscape"
-      ],
-      "takenAt": null,
-      "featured": false,
-      "gallery": true,
-      "width": 6240,
-      "height": 4160,
-      "aspectRatio": 1.5,
-      "lqip": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAwACADASIAAhEBAxEB/8QAGQAAAwEBAQAAAAAAAAAAAAAAAAEDBAIF/8QAHBAAAwEBAQADAAAAAAAAAAAAAAECERIDEyFB/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAEEBQP/xAAbEQACAgMBAAAAAAAAAAAAAAAAAQMRAhJRQf/aAAwDAQACEQMRAD8A8NHRNMaZqGO0UA50NHYqI6OaWmL5KwJutJnKyxQr1m+ngujI/Wv0F61oYy9FlDwho5r7I9AqOVlFGiqOeiTsXYbBqf/Z",
-      "variants": {
-        "avif": [
-          800,
-          1600,
-          2400
-        ],
-        "webp": [
-          800,
-          1600,
-          2400
         ]
       },
       "originalExt": "jpg"
