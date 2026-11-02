@@ -35,4 +35,9 @@ export const photos: PhotoEntry[] = [
   { id: 'fdf95dc5-6007-4510-805c-c5ef0fb03556', alt: '', tags: ['austin', 'street photography', 'fireworks'] }, // DSC00738_edited.JPG
   { id: 'd9ddea01-965a-49d6-b129-3477d631398a', alt: 'norway-reinebringen-peak', tags: ['norway', 'landscape']}, // DSC02355_edited.JPG
   { id: '55a31fc6-603d-4948-aab6-28a8b954d32e', alt: 'norway-oslo-downtown', tags: ['norway', 'street photography'] }, // DSC01617_edited.JPG
+  { id: 'f1f84c04-3367-4a49-8968-16d290310d88', alt: 'norway-uttakliev-beach-sunset', tags: ['norway', 'landscape'] }, // DSC03395_edited_1.JPG
+  { id: '569cf0a5-9503-4ef6-8860-f776dd1792da', alt: 'norway-ryten-wildflowers', tags: ['norway', 'landscape'] }, // DSC03056_edited.JPG
+  { id: 'e1d2bb4a-49ff-4bac-ba59-808617b63d86', alt: 'norway-a-mountain-sun', tags: ['norway', 'landscape'] }, // DSC02578_edited.JPG
+  { id: 'b3d38982-973b-472e-bb42-bdf08b33082a', alt: 'norway-aurora', tags: ['norway', 'landscape', 'astrophotography'] }, // DSC02321_edited.JPG
+  { id: 'dfcd3753-d3e3-49d6-8018-bacead4c4712', alt: 'nyc-skyline-blue', tags: ['nyc', 'cityscape'] }, // DSCF1202.JPG
 ];
