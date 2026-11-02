@@ -13,12 +13,12 @@ export type PhotoEntry = {
 // To reorder the gallery, reorder this array.
 export const photos: PhotoEntry[] = [
   { id: 'a152a662-ff92-4277-b6b0-17ba2cfb40ac', alt: 'big-sur-car', tags: ['california', 'moody', 'forest'] }, // DSCF0431-best.JPG
+  { id: 'd9ddea01-965a-49d6-b129-3477d631398a', alt: 'norway-reinebringen-peak', tags: ['norway', 'landscape']}, // DSC02355_edited.JPG
   { id: '1ddaa08e-d8da-4c28-a134-9e1d432aacd6', alt: '', tags: ['nyc', 'street photography'] }, // DSCF0131-converted.JPG
   { id: '84b3b048-f566-4490-9d71-c656389dadfa', alt: '', tags: ['nyc', 'street photography'] }, // DSCF0237.JPG
   { id: 'ce023276-0ac3-4921-ad22-708c0a16cb53', alt: '', tags: ['street photography', 'seattle'] }, // DSCF2241_edited.JPG
   { id: '0b9ef1b4-b73d-4ad3-8e6e-d0197f8e6af1', alt: '', tags: ['flight'] }, // DSCF0482.JPG
   { id: 'a3dd1e7d-5d68-4911-9818-ea9639d8d20a', alt: '', tags: ['cityscape'] }, // DSCF1178-converted.JPG
-  { id: 'd9ddea01-965a-49d6-b129-3477d631398a', alt: 'norway-reinebringen-peak', tags: ['norway', 'landscape']}, // DSC02355_edited.JPG
   { id: 'fab8901e-e5d6-40f3-8614-4ee831fbc780', alt: 'boat-sunny-morning', tags: ['street photography', 'seattle'] }, // DSCF2114_edited.JPG
   { id: '412d06ff-3767-4f9f-81e4-a688fd15af90', alt: '', tags: ['cityscape'] }, // DSCF0430-converted.JPG
   { id: 'fdf95dc5-6007-4510-805c-c5ef0fb03556', alt: '', tags: ['austin', 'street photography', 'fireworks'] }, // DSC00738_edited.JPG
